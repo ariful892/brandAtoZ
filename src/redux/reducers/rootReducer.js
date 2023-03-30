@@ -3,6 +3,7 @@ import { userRegisterReducer, userSigninReducer } from "./authReducer";
 import navbarReducer from "./navbarReducer";
 import { forProductsReducer } from "./productsForYouReducer";
 import productsReducer from "./productsReducer";
+import { reviewReducer } from "./reviewReducer";
 import searchInputReducer from "./searchReducer";
 import shopHompageReducer from "./shopHomepageReducer";
 import shoppingMallReducer from "./shoppingMallReducer";
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     user: shopHompageReducer,
     productsReducer: productsReducer,
     searchProduct: searchInputReducer,
+    reviews:reviewReducer
 });
 
 export default rootReducer;

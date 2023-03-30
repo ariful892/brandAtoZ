@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Reviews.css'
 import user1 from '../../../../../assets/single-product/user1.png'
 import user2 from '../../../../../assets/single-product/user2.png';
@@ -9,11 +9,143 @@ import review1img2 from '../../../../../assets/single-product/user1img2.png';
 import review1img3 from '../../../../../assets/single-product/user1img3.png';
 import review2img1 from '../../../../../assets/single-product/user2img1.png';
 import review2img2 from '../../../../../assets/single-product/user2img2.png';
+import { useDispatch } from 'react-redux';
+import { postReview } from '../../../../../redux/actionCreators/reviewAction';
+import { useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 const Reviews = () => {
+    // const [revieew,setRevieew]=useState([])
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/api/prodReview')
+    //     .then((res)=>res.json())
+    //     .then(data=>setRevieew(data))
+
+      
+
+    // },[])
+
+    const { isLoading, error, data,refetch } = useQuery('repoData', () =>
+    fetch('https://backedforreview-production-6464.up.railway.app/api/prodReview').then(res =>
+      res.json()
+    )
+  )
+
+
+
+
+
+
+    const dispatch=useDispatch()
+    const [file,setFile]=useState('')
+    const [formDat, setFormData] = useState({
+
+        username: '',
+        review: '',
+       
+
+
+    })
+     const { username, review } = formDat
+    const onChange = (e) => {
+
+        setFormData((prevData) => ({
+            ...prevData,
+            [e.target.name]: e.target.value,
+        }))
+
+
+
+    }
+
+
+    const imageUload=(e)=>{
+        setFile(e.target.files[0])
+       
+
+
+    }
+
+
+
+    const handleImageUpload = (event) => {
+        event.preventDefault();
+        // const file = event.currentTarget["fileInput"].files[0];
+    
+        const formData = new FormData();
+        formData.append("username",formDat.username);
+        formData.append("review",formDat.review);
+        formData.append('testImg', file);
+        formData.append('testImg', file.name);
+    
+        // fetch("http://localhost:5000/api/prodReview/", {
+        //   method: "POST",
+        //   body: formData
+        // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //   })
+        //   .catch((error) => {
+        //     console.error(error);
+        //   });
+
+       
+        dispatch(postReview(formData))
+        
+            refetch()
+           
+      
+
+       
+
+   
+
+    
+
+
+      };
+
+
+
+      if (isLoading) {
+        return <div className="flex items-center justify-center">
+        <div
+            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+                className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Loading...</span
+            >
+        </div>
+    </div>
+      }
     return (
         <div className='reviews-container'>
             <h2 className='reviews-title'>Reviews</h2>
+
+            <form className='mt-[-20px] mb-[35px]' onSubmit={handleImageUpload}>
+                <input className='border-2 my-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={username} name='username'  placeholder='username' onChange={onChange} />
+                <textarea className='border-2 mb-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={review} name='review'  placeholder='review' onChange={onChange} />
+                    <input  type="file" name='testImg'  onChange={imageUload}/><br></br>
+                    <button type='submit' className='bg-[#DE3D3A] text-white py-[8px] px-[26px] rounded-[8px] w-full mt-2 '>Submit</button>
+                </form>
+
+
+                {data.map((r)=><><div className='my-[100px]'>
+                    <div className='flex justify-start items-center space-x-3'>
+                    <img className='h-[60px] w-[60px] rounded-full  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
+                    <h1 className='font-semibold'>{r.username}</h1>
+
+                    </div>
+                    <h1 className='ml-[15px] mt-[10px]'>{r.review}</h1>
+                   
+                   
+                    
+
+                    
+
+                    </div></>)}
 
             <div className='user-review'>
                 <div className='user-container'>

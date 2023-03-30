@@ -30,3 +30,11 @@ export const USER_SIGNIN_SUCCESS = 'USER_SIGNIN_SUCCESS';
 export const USER_SIGNIN_FAIL = 'USER_SIGNIN_FAIL';
 
 export const USER_SIGNOUT = 'USER_SIGNOUT';
+
+
+
+// review action type
+export const REVIEW_REQUEST = 'REVIEW_REQUEST';
+export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
+export const REVIEW_FAIL = 'REVIEW_FAIL';
+
