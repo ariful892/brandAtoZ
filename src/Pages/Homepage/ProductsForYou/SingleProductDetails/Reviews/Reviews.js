@@ -95,14 +95,16 @@ const Reviews = () => {
 
        
         dispatch(postReview(formData))
-        toast.success('Your review is posted successfully')
-        usernameRef.current.value = " "
-        reviewRef.current.value = " "
-        imgRef.current.value =""
-
+         toast.success('Your review is posted successfully')
+        // refetch()
+       
+        usernameRef.current.value= " "
+        reviewRef.current.value= " "
+        imgRef.current.value= ""
+      
        
         
-            refetch()
+           
 
             // event.target.reset()
            
