@@ -18,7 +18,9 @@ import Seller from './Pages/Shop/ShopHome/Home/Seller';
 import SearchProducts from './Pages/Homepage/SearchProducts/SearchProducts';
 import Nav from './Pages/Shared/Navbar/Nav';
 import Carts from './Pages/Carts/Carts';
+
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 

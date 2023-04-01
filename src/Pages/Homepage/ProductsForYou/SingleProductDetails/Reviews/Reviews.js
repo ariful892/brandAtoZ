@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Reviews.css'
 import user1 from '../../../../../assets/single-product/user1.png'
 import user2 from '../../../../../assets/single-product/user2.png';
@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { postReview } from '../../../../../redux/actionCreators/reviewAction';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 
 const Reviews = () => {
     // const [revieew,setRevieew]=useState([])
@@ -35,7 +36,9 @@ const Reviews = () => {
 
 
 
-
+  const usernameRef = useRef(null)
+  const reviewRef = useRef(null)
+  const imgRef = useRef(null)
     const dispatch=useDispatch()
     const [file,setFile]=useState('')
     const [formDat, setFormData] = useState({
@@ -92,8 +95,17 @@ const Reviews = () => {
 
        
         dispatch(postReview(formData))
+        toast.success('Your review is posted successfully')
+        usernameRef.current.value = " "
+        reviewRef.current.value = " "
+        imgRef.current.value =""
+
+       
         
             refetch()
+
+            // event.target.reset()
+           
            
       
 
@@ -125,9 +137,9 @@ const Reviews = () => {
             <h2 className='reviews-title'>Reviews</h2>
 
             <form className='mt-[-20px] mb-[35px]' onSubmit={handleImageUpload}>
-                <input className='border-2 my-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={username} name='username'  placeholder='username' onChange={onChange} />
-                <textarea className='border-2 mb-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={review} name='review'  placeholder='review' onChange={onChange} />
-                    <input  type="file" name='testImg'  onChange={imageUload}/><br></br>
+                <input className='border-2 my-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={username} name='username'  placeholder='username'  ref={usernameRef} onChange={onChange} />
+                <textarea className='border-2 mb-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={review} name='review'  placeholder='review' ref={reviewRef} onChange={onChange} />
+                    <input  type="file" name='testImg' ref={imgRef} onChange={imageUload}/><br></br>
                     <button type='submit' className='bg-[#DE3D3A] text-white py-[8px] px-[26px] rounded-[8px] w-full mt-2 '>Submit</button>
                 </form>
 
