@@ -147,12 +147,13 @@ const Reviews = () => {
 
 
                 {data.map((r)=><><div className='my-[100px]'>
-                    <div className='flex justify-start items-center space-x-3'>
-                    <img className='h-[60px] w-[60px] rounded-full  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
+                    <div className=''>
+                   
                     <h1 className='font-semibold'>{r.username}</h1>
 
                     </div>
                     <h1 className='ml-[15px] mt-[10px]'>{r.review}</h1>
+                    <img className='h-[60px] w-[60px] mt-[10px]  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
                    
                    
                     
