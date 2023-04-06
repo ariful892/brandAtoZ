@@ -1,7 +1,7 @@
 import { REVIEW_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS } from "../actionTypes/actionTypes";
 
 
-export const postReview = (formData) => async (dispatch, getState) => {
+export const postReview = (formData,prodId) => async (dispatch, getState) => {
     dispatch({ type: REVIEW_REQUEST, payload: formData });
 
     try {
@@ -15,7 +15,7 @@ export const postReview = (formData) => async (dispatch, getState) => {
         // })
 
         // const data = await res.json()
-        fetch("https://backedforreview-production-6464.up.railway.app/api/prodReview", {
+        fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`, {
           method: "POST",
           body: formData
         })

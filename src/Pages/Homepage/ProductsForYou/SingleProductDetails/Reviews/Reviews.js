@@ -9,7 +9,7 @@ import review1img2 from '../../../../../assets/single-product/user1img2.png';
 import review1img3 from '../../../../../assets/single-product/user1img3.png';
 import review2img1 from '../../../../../assets/single-product/user2img1.png';
 import review2img2 from '../../../../../assets/single-product/user2img2.png';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { postReview } from '../../../../../redux/actionCreators/reviewAction';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
@@ -25,9 +25,10 @@ const Reviews = () => {
       
 
     // },[])
+    const prodId=useSelector((state)=>state?.forYouProducts?.singleProduct?._id)
 
-    const { isLoading, error, data,refetch } = useQuery('repoData', () =>
-    fetch('https://backedforreview-production-6464.up.railway.app/api/prodReview').then(res =>
+    const { isLoading, error, data,refetch } = useQuery(['repoData',prodId], () =>
+    fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`).then(res =>
       res.json()
     )
   )
@@ -35,6 +36,11 @@ const Reviews = () => {
 
 
 
+
+
+
+
+ 
 
   const usernameRef = useRef(null)
   const reviewRef = useRef(null)
@@ -76,6 +82,7 @@ const Reviews = () => {
         // const file = event.currentTarget["fileInput"].files[0];
     
         const formData = new FormData();
+        formData.append("prodId",prodId)
         formData.append("username",formDat.username);
         formData.append("review",formDat.review);
         formData.append('testImg', file);
@@ -94,7 +101,7 @@ const Reviews = () => {
         //   });
 
        
-        dispatch(postReview(formData))
+        dispatch(postReview(formData,prodId))
          toast.success('Your review is posted successfully')
         // refetch()
        
@@ -146,7 +153,7 @@ const Reviews = () => {
                 </form>
 
 
-                {data.map((r)=><><div className='my-[100px]'>
+                {data.length===0 ?<><h1 className='text-center text-[30px] font-bold my-[40px]'>No review</h1></>  :   data.map((r)=><><div className='my-[100px]'>
                     <div className=''>
                    
                     <h1 className='font-semibold'>{r.username}</h1>
