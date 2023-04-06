@@ -25,7 +25,7 @@ const Products = () => {
                                         <b className='text-white text-sm '>Price</b>:${s.price}
                                     </p>
                                     <p className="text-white text-base ">
-                                        <b className='text-white text-sm'>Description</b>:{s.description}
+                                        {/* <b className='text-white text-sm'>Description</b>:{s.description} */}
                                     </p>
 
                                 </div>

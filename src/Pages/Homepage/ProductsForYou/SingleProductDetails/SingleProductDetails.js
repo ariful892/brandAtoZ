@@ -13,7 +13,7 @@ const SingleProductDetails = () => {
                 <ProductInfo></ProductInfo>
                
                 <Reviews></Reviews>
-                <QandA></QandA>
+                {/* <QandA></QandA> */}
                 <RelatedProducts></RelatedProducts>
             </div>
         </div>

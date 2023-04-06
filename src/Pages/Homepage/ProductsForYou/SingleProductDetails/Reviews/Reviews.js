@@ -153,7 +153,7 @@ const Reviews = () => {
                 </form>
 
 
-                {data.length===0 ?<><h1 className='text-center text-[30px] font-bold my-[40px]'>No review</h1></>  :   data.map((r)=><><div className='my-[100px]'>
+                {data.length===0 ?<><h1 className='text-center text-[30px] font-bold my-[40px]'>No review !!!</h1></>  :   data.map((r)=><><div className='my-[100px]'>
                     <div className=''>
                    
                     <h1 className='font-semibold'>{r.username}</h1>
@@ -169,7 +169,7 @@ const Reviews = () => {
 
                     </div></>)}
 
-            <div className='user-review'>
+            {/* <div className='user-review'>
                 <div className='user-container'>
                     <img className='user-image' src={user1} alt="" />
                     <div className="review-user-name">Elementum Rasli</div>
@@ -197,8 +197,8 @@ const Reviews = () => {
                     </div>
                     <textarea className='comment-box' name="" id="" placeholder='Reply'></textarea>
                 </div>
-            </div>
-            <div className='user-review'>
+            </div> */}
+            {/* <div className='user-review'>
                 <div className='user-container'>
                     <img className='user-image' src={user2} alt="" />
                     <div className="review-user-name">Risus Dui Nunc Arcu</div>
@@ -226,7 +226,7 @@ const Reviews = () => {
 
                     <textarea className='comment-box' name="" id="" placeholder='Reply'></textarea>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
