@@ -22,16 +22,16 @@ const Reviews = () => {
     //     .then((res)=>res.json())
     //     .then(data=>setRevieew(data))
 
-      
+
 
     // },[])
-    const prodId=useSelector((state)=>state?.forYouProducts?.singleProduct?._id)
+    const prodId = useSelector((state) => state?.forYouProducts?.singleProduct?._id)
 
-    const { isLoading, error, data,refetch } = useQuery(['repoData',prodId], () =>
-    fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`).then(res =>
-      res.json()
+    const { isLoading, error, data, refetch } = useQuery(['repoData', prodId], () =>
+        fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`).then(res =>
+            res.json()
+        )
     )
-  )
 
 
 
@@ -40,22 +40,22 @@ const Reviews = () => {
 
 
 
- 
 
-  const usernameRef = useRef(null)
-  const reviewRef = useRef(null)
-  const imgRef = useRef(null)
-    const dispatch=useDispatch()
-    const [file,setFile]=useState('')
+
+    const usernameRef = useRef(null)
+    const reviewRef = useRef(null)
+    const imgRef = useRef(null)
+    const dispatch = useDispatch()
+    const [file, setFile] = useState('')
     const [formDat, setFormData] = useState({
 
         username: '',
         review: '',
-       
+
 
 
     })
-     const { username, review } = formDat
+    const { username, review } = formDat
     const onChange = (e) => {
 
         setFormData((prevData) => ({
@@ -68,9 +68,9 @@ const Reviews = () => {
     }
 
 
-    const imageUload=(e)=>{
+    const imageUload = (e) => {
         setFile(e.target.files[0])
-       
+
 
 
     }
@@ -80,14 +80,14 @@ const Reviews = () => {
     const handleImageUpload = (event) => {
         event.preventDefault();
         // const file = event.currentTarget["fileInput"].files[0];
-    
+
         const formData = new FormData();
-        formData.append("prodId",prodId)
-        formData.append("username",formDat.username);
-        formData.append("review",formDat.review);
+        formData.append("prodId", prodId)
+        formData.append("username", formDat.username);
+        formData.append("review", formDat.review);
         formData.append('testImg', file);
         formData.append('testImg', file.name);
-    
+
         // fetch("http://localhost:5000/api/prodReview/", {
         //   method: "POST",
         //   body: formData
@@ -100,74 +100,76 @@ const Reviews = () => {
         //     console.error(error);
         //   });
 
-        usernameRef.current.value= " "
-        reviewRef.current.value= " "
-        imgRef.current.value= ""
-        dispatch(postReview(formData,prodId,refetch))
-        
-        // refetch()
-       
-       
-      
-       
-        
-           
 
-            // event.target.reset()
-           
-           
-      
+        dispatch(postReview(formData, prodId, refetch))
 
-       
-
-   
-
-    
-
-
-      };
+        usernameRef.current.value = " "
+        reviewRef.current.value = " "
+        imgRef.current.value = ""
 
 
 
-      if (isLoading) {
+
+
+
+
+
+
+        //  event.target.reset()
+
+
+
+
+
+
+
+
+
+
+
+    };
+
+
+
+    if (isLoading) {
         return <div className="flex items-center justify-center">
-        <div
-            className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-            role="status">
-            <span
-                className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-            >Loading...</span
-            >
+            <div
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                role="status">
+                <span
+                    className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...</span
+                >
+            </div>
         </div>
-    </div>
-      }
+    }
     return (
         <div className='reviews-container'>
             <h2 className='reviews-title'>Reviews</h2>
 
             <form className='mt-[-20px] mb-[35px]' onSubmit={handleImageUpload}>
-                <input className='border-2 my-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={username} name='username'  placeholder='username'  ref={usernameRef} onChange={onChange} />
-                <textarea className='border-2 mb-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={review} name='review'  placeholder='review' ref={reviewRef} onChange={onChange} />
-                    <input  type="file" name='testImg' ref={imgRef} onChange={imageUload}/><br></br>
-                    <button type='submit' className='bg-[#DE3D3A] text-white py-[8px] px-[26px] rounded-[8px] w-full mt-2 '>Submit</button>
-                </form>
+                <input className='border-2 my-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={username} name='username' placeholder='username' ref={usernameRef} onChange={onChange} />
+                <textarea className='border-2 mb-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={review} name='review' placeholder='review' ref={reviewRef} onChange={onChange} />
+                <input type="file" name='testImg' ref={imgRef} onChange={imageUload} /><br></br>
+                <button type='submit' className='bg-[#DE3D3A] text-white py-[8px] px-[26px] rounded-[8px] w-full mt-2 '>Submit</button>
+            </form>
 
 
-                {data.length===0 ?<><h1 className='text-center text-[30px] font-bold my-[40px]'>No review !!!</h1></>  :   data.map((r)=><><div className='my-[100px]'>
-                    <div className=''>
-                   
+            {data.length === 0 ? <><h1 className='text-center text-[30px] font-bold my-[40px]'>No review !!!</h1></> : data.map((r) => <><div className='my-[100px]'>
+                <div className=''>
+
                     <h1 className='font-semibold'>{r.username}</h1>
 
-                    </div>
-                    <h1 className='ml-[15px] mt-[10px]'>{r.review}</h1>
-                    <img className='h-[60px] w-[60px] mt-[10px]  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
-                   
-                   
-                    
+                </div>
+                <h1 className='ml-[15px] mt-[10px]'>{r.review}</h1>
+                <img className='h-[60px] w-[60px] mt-[10px]  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
 
-                    
 
-                    </div></>)}
+
+
+
+
+            </div></>)}
 
             {/* <div className='user-review'>
                 <div className='user-container'>
