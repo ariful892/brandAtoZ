@@ -1,7 +1,8 @@
+import { toast } from "react-toastify";
 import { REVIEW_FAIL, REVIEW_REQUEST, REVIEW_SUCCESS } from "../actionTypes/actionTypes";
 
 
-export const postReview = (formData,prodId) => async (dispatch, getState) => {
+export const postReview = (formData,prodId,refetch) => async (dispatch, getState) => {
     dispatch({ type: REVIEW_REQUEST, payload: formData });
 
     try {
@@ -26,6 +27,8 @@ export const postReview = (formData,prodId) => async (dispatch, getState) => {
             //   reftch()
             // }
             dispatch({ type: REVIEW_SUCCESS, payload: data });
+            toast.success('Your review is posted successfully')
+            refetch()
           })
         
 
