@@ -29,7 +29,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div >
+    <div className='overflow-x-hidden'>
       <Provider store={store}>
 
         <ScrollToTop />

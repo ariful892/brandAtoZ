@@ -158,11 +158,11 @@ const Reviews = () => {
             {data.length === 0 ? <><h1 className='text-center text-[30px] font-bold my-[40px]'>No review !!!</h1></> : data.map((r) => <><div className='my-[100px]'>
                 <div className=''>
 
-                    <h1 className='font-semibold'>{r.username}</h1>
+                    <h1 className='font-semibold'>{r?.username}</h1>
 
                 </div>
-                <h1 className='ml-[15px] mt-[10px]'>{r.review}</h1>
-                <img className='h-[60px] w-[60px] mt-[10px]  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r.image}`} alt="" />
+                <h1 className='ml-[15px] mt-[10px]'>{r?.review}</h1>
+                <img className='h-[60px] w-[60px] mt-[10px]  border border-blue-400 flex justify-center items-center' src={`https://backedforreview-production-6464.up.railway.app/${r?.image}`} alt="" />
 
 
 

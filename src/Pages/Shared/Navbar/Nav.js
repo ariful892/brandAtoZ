@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import 'tw-elements';
 
-import { Bars3Icon, CameraIcon, ChevronDownIcon, ClockIcon, FolderMinusIcon, HeartIcon, MicrophoneIcon, TicketIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars2Icon, Bars3Icon, CameraIcon, ChevronDownIcon, ClockIcon, FolderMinusIcon, HeartIcon, MagnifyingGlassIcon, MicrophoneIcon, ShoppingBagIcon, TicketIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AiFillHome } from 'react-icons/ai';
 import { DocumentTextIcon, ChatBubbleOvalLeftEllipsisIcon, BellIcon, ShoppingCartIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline'
 import { VscHome } from 'react-icons/vsc';
@@ -29,6 +29,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
     const dispatch = useDispatch()
     const [nav, setNav] = useState(false)
     const [nav2, setNav2] = useState(false)
+    const [nav3, setNav3] = useState(false)
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
 
     const { userInfoRegister, loading1 } = useSelector((state) => state?.userRegister);
@@ -61,6 +62,11 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
     }
 
+    const handleNav2=()=>{
+        setNav3(!nav3)
+
+    }
+
 
     if (loading1 || loading2) {
         return <div class="flex items-center justify-center">
@@ -84,9 +90,9 @@ const Nav = ({ modalOpen, setModalOpen }) => {
         <div className='w-screen h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
             {modalOpen && <Modal setOpenModal={setModalOpen}></Modal>}
 
-            <div className='px-[24px] flex justify-between items-center w-full h-full '>
-                <div className='flex items-center justify-start md:space-x-6 space-x-12'>
-                    <div onClick={handleNav} className='w-[35px] h-[35px] bg-[#F0F5FA] flex justify-center items-center rounded-full cursor-pointer'>
+            <div className='px-[5px]  md:px-[24px] flex justify-between items-center w-full h-full '>
+                <div className='flex items-center justify-start md:space-x-6 space-x-2'>
+                    <div onClick={handleNav} className='hidden   md:w-[35px] md:h-[35px] bg-[#F0F5FA] md:flex justify-center items-center rounded-full cursor-pointer'>
                         <Bars3BottomLeftIcon className="h-6 w-6 " />
 
                     </div>
@@ -157,26 +163,48 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                 </div>
 
+                  <div className=' flex justify-between items-center space-x-4 md:hidden'>
+
+
+                  <div onClick={handleNav2} className='   md:hidden'>
+                        <MagnifyingGlassIcon className="h-6 w-6 " />
+
+                    </div>
+
 
 
                 <div onClick={() => setNav2(!nav2)} className='md:hidden'>
 
                     {
-                        !nav2 ? <Bars3Icon className="h-6 w-6 text-black" /> : <XMarkIcon className="h-6 w-6 text-black" />
+                        !nav2 ? <ShoppingBagIcon className="h-6 w-6 text-blue-500" /> : <XMarkIcon className="h-6 w-6 text-black" />
 
                     }
 
                 </div>
 
+
+                <div onClick={handleNav} className='   md:hidden'>
+                        <Bars2Icon className="h-6 w-6 " />
+
+                    </div>
+
+                  </div>
+               
+
             </div>
 
-            <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}>
-                <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}>
+            {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
+
+            {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
+                <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300'}>
+                {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
+                {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
+               
 
                     <div className='mt-[20px] px-[40px]'>
                         <div className='flex justify-between items-center text-[#010203]'>
                             <h1 className=' text-[20px] md:text-[24px]'>Categories</h1>
-                            <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer" />
+                            <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer z-10" />
 
 
 
@@ -201,9 +229,39 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                     </div>
 
-                </div>
+                
+                   
+                {/* uporer */}
+                
 
             </div>
+            {/* nicher */}
+
+
+
+
+            <div className={!nav3 ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300    '}>
+
+            <div className='flex justify-end items-center text-[#010203] mt-[30px]'>
+                           
+                            <XMarkIcon onClick={handleNav2} className="h-6 w-6  " />
+
+
+
+                        </div>
+                <div className='flex justify-start items-center space-x-2 mt-[30px]'>
+                <MagnifyingGlassIcon className="h-8 w-8 text-black "/>
+                <input type="text"  className='outline-none border-none text-[20px]  text-black' placeholder='Search'/>
+
+
+                </div>
+
+
+            </div>
+           
+            
+
+            
 
             <div className={!nav2 ? 'hidden' : 'absolute w-full bg-[#FFFFFF]  px-4 md:hidden'}>
 
