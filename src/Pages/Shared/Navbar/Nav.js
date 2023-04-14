@@ -21,15 +21,19 @@ import Modal from '../../Login/LoginModal/Modal';
 import { signout } from '../../../redux/actionCreators/authActions';
 import Loading from '../Loading/Loading';
 import { useQuery } from 'react-query';
+import { searchInput } from '../../../redux/actionCreators/searchAction';
+import { useRef } from 'react';
 
 
 const Nav = ({ modalOpen, setModalOpen }) => {
 
 
     const dispatch = useDispatch()
+    const navigate = useNavigate();
     const [nav, setNav] = useState(false)
     const [nav2, setNav2] = useState(false)
     const [nav3, setNav3] = useState(false)
+    const searchRef = useRef(null)
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
 
     const { userInfoRegister, loading1 } = useSelector((state) => state?.userRegister);
@@ -83,6 +87,36 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
 
 
+    let searchText;
+
+    const handleSearchInput = (e) => {
+        searchText = e.target.value;
+
+        // console.log(searchText)
+    }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            // 👇 Get input value
+            dispatch(searchInput(searchText))
+            setNav3(!nav3)
+           
+            navigate('/search')
+            searchRef.current.value = "";
+           
+            //   setUpdated(message);
+        }
+    };
+
+    const handleSearch = () => {
+        dispatch(searchInput(searchText))
+        setNav3(!nav3)
+        navigate('/search')
+        searchRef.current.value = "";
+    }
+
+
+
     return (
 
 
@@ -98,8 +132,8 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                     </div>
 
                     <Link to='/'><div className='flex flex-col justify-between items-center'>
-                        <img className='h-[40px] w-[150px]' src="https://brandatoz.com/images/atoz.png" alt="" />
-                        <p className='text-[14px]'>Easy Shopping</p>
+                        <img className='h-[25px] w-[90px]  md:h-[40px] md:w-[150px]' src="https://brandatoz.com/images/atoz.png" alt="" />
+                        <p className='text-[12px]  md:text-[14px]'>Easy Shopping</p>
                     </div></Link>
 
                 </div>
@@ -250,8 +284,9 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                         </div>
                 <div className='flex justify-start items-center space-x-2 mt-[30px]'>
-                <MagnifyingGlassIcon className="h-8 w-8 text-black "/>
-                <input type="text"  className='outline-none border-none text-[20px]  text-black' placeholder='Search'/>
+                <MagnifyingGlassIcon  onClick={handleSearch} className="h-8 w-8 text-black "/>
+                <input ref={searchRef}  onChange={handleSearchInput}
+                        onKeyDown={handleKeyDown}   type="text"  className='outline-none border-none text-[20px]  text-black' placeholder='Search'/>
 
 
                 </div>
