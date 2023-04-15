@@ -84,6 +84,7 @@
     height: 100%;
     background-size: cover;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 .edit-container {
@@ -384,7 +385,7 @@
     .shop-type {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-        margin-top: 80px;
+        margin-top: 0px;
     }
 
     .single-type {

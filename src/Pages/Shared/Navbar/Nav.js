@@ -284,12 +284,24 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                         </div>
                 <div className='flex justify-start items-center space-x-2 mt-[30px]'>
-                <MagnifyingGlassIcon  onClick={handleSearch} className="h-8 w-8 text-black "/>
+                <MagnifyingGlassIcon   className="h-8 w-8 text-black "/>
                 <input ref={searchRef}  onChange={handleSearchInput}
                         onKeyDown={handleKeyDown}   type="text"  className='outline-none border-none text-[20px]  text-black' placeholder='Search'/>
+                       
 
 
                 </div>
+                <button onClick={handleSearch} type="button" className='mt-[10px] w-full px-6
+            py-2.5
+            bg-[#D1DEEB]
+            
+            font-semibold
+            text-[16px]
+            leading-tight
+            
+            rounded
+            shadow-md
+             text-[#2B333B]'>Search</button>
 
 
             </div>
