@@ -191,7 +191,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
              text-[#2B333B]
             transition
             duration-150
-            ease-in-out" >
+            ease-in-out " >
                         Log in
                     </button></Link>}
 
@@ -301,7 +301,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
             
             rounded
             shadow-md
-             text-[#2B333B]'>Search</button>
+             text-[#2B333B] '>Search</button>
 
 
             </div>

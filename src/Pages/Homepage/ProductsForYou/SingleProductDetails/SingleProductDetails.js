@@ -14,7 +14,7 @@ const SingleProductDetails = () => {
                
                 <Reviews></Reviews>
                 {/* <QandA></QandA> */}
-                <RelatedProducts></RelatedProducts>
+                {/* <RelatedProducts></RelatedProducts> */}
             </div>
         </div>
     );

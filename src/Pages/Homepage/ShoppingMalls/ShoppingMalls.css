@@ -266,6 +266,7 @@
     .shopping-mall-container {
         /* width: 95%;
         margin: auto; */
+        margin-top: 0px;
     }
 
     .shopping-title {
@@ -401,6 +402,8 @@
     .shopping-mall-container {
         /* width: 90%;
         margin: auto; */
+        /* margin-top: -60px; */
+        
     }
 
     .shopping-mall {

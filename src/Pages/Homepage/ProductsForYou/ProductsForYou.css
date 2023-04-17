@@ -23,8 +23,9 @@
 /* Mobile device */
 @media screen and (max-width:692px) {
     .products-for-container {
+        margin-top: -55px;
         /* width: 95%;
-        margin: auto; */
+        margin: auto; */    
 
     }
 
