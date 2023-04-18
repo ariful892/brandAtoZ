@@ -35,14 +35,14 @@ const ShopHome = () => {
                         <img className='w-full md:h-[400px]' src={`https://brandatoz.com${s?.seller?.sellerbannerimg.split(",")[0]}`} alt="" />
                         <div className='px-[10px] pt-[20px] x] '>
                             <div className='flex justify-between items-center md:items-end'>
-                                <div className='flex justify-start items-center space-x-2.5 md:space-x-8'>
+                                <div className='flex justify-start items-center space-x-5 md:space-x-8'>
                                     <div className='h-[101px] w-[101px] md:h-[148px] md:w-[150px] md:mt-[-35px]   rounded-full border-4 border-blue-800'>
                                         <img className='h-[90px] w-[83px] md:h-[138px] md:w-[132px]  rounded-full ml-[6px] mt-[3.5px]' src={`https://brandatoz.com${s?.seller?.logo.split(",")[0]}`} alt="" />
 
 
                                     </div>
-                                    <div className=''>
-                                        <p className='text-white text-xl w-[150px] md:w-max  md:text-3xl md:font-bold'>{s.seller.shopName}</p>
+                                    <div className=' text-[12px] w-[150px] md:w-max  md:text-3xl md:font-bold'>
+                                        <p className='text-white'>{s.seller.shopName}</p>
                                         {/* <div className='flex justify-start items-center space-x-1 '> */}
                                         {/* <svg className="w-6 h-6  text-yellow-400  ml-[-7px] mr-[-5px]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> */}
                                         {/* <p className='text-slate-400 font-bold '>4.9</p>
@@ -52,10 +52,10 @@ const ShopHome = () => {
                                             </div> */}
                                         {/* <p className='text-slate-400 font-bold '>{s?.seller?.description}</p> */}
 
-                                        <p className='text-white text-xl'>Shop Address: {s?.seller?.shopAddress}</p>
-                                        <p className='text-white text-xl'>Seller Address: {s?.seller?.ownerAddress}</p>
-                                        <p className='text-white text-xl'>Seller Email: {s?.email}</p>
-                                        <p className='text-white text-xl'>Phone no: {s?.phnNo}</p>
+                                        <p className='text-white'>Shop Address: {s?.seller?.shopAddress}</p>
+                                        <p className='text-white'>Seller Address: {s?.seller?.ownerAddress}</p>
+                                        <p className='text-white'>Seller Email: {s?.email}</p>
+                                        <p className='text-white'>Phone no: {s?.phnNo}</p>
 
                                         <div className='mt-[22px] flex justify-start items-center space-x-6'>
 

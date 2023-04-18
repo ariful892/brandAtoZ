@@ -15,7 +15,7 @@ const Shop = () => {
 
             {/* <!-- Navbar --> */}
 
-            <div className='shop-nav'>
+            {/* <div className='shop-nav'>
                 <NavLink
                     to={`/shop/home/${id}`}
                     className={({ isActive }) =>
@@ -40,10 +40,8 @@ const Shop = () => {
                 >
                     Profile
                 </NavLink>
-                {/* <Link to={'/shop'} className='shop-nav-item'>Homepage</Link>
-                <Link className='shop-nav-item' to={'/shop/products'}>All Products</Link>
-                <Link className='shop-nav-item' to={'/shop/profile'}>Profile</Link> */}
-            </div>
+               
+            </div> */}
 
             <Outlet></Outlet>
 

@@ -20,7 +20,7 @@ const Seller = () => {
         <div className='bg-black h-max '>
             <ShopHome></ShopHome>
             <Products></Products>
-            <hr className='mt-[200px]' />
+            <hr className='' />
         </div>
     );
 };
