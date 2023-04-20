@@ -78,7 +78,7 @@ const SearchProducts = () => {
                                     <p className='s-products-price'>BDT {product.price}</p>
                                 </div>
                                 <div className='text-center'>
-                                    <button className='s-add-cart-btn'>Add to Cart</button>
+                                    {/* <button className='s-add-cart-btn'>Add to Cart</button> */}
                                 </div>
 
                             </div>)

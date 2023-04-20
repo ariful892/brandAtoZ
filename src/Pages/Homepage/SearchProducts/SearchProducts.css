@@ -17,10 +17,11 @@
 .s-product {
     padding: 8px;
     width: 196px;
-    min-height: 465px;
+    min-height: 265px;
     background: #FFFFFF;
     border-radius: 8px;
     position: relative;
+    cursor: pointer;
 }
 
 .s-products-img {
