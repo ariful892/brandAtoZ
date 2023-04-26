@@ -16,7 +16,7 @@ export const postReview = (formData,prodId,refetch) => async (dispatch, getState
         // })
 
         // const data = await res.json()
-        fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`, {
+        fetch(`https://backedforreview7.onrender.com/api/prodReview?prodId=${prodId}`, {
           method: "POST",
           body: formData
         })

@@ -16,7 +16,7 @@
 
 .s-product {
     padding: 8px;
-    width: 196px;
+    width: fit-content;
     min-height: 265px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -25,7 +25,8 @@
 }
 
 .s-products-img {
-    width: 175px;
+
+    width: fit-content;
     height: 190px;
     border-radius: 8px;
     margin-bottom: 16px;
@@ -116,19 +117,19 @@
         width: fit-content;
         height: fit-content;
         grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
+        gap: 15px;
 
     }
 
     .s-product {
         padding: 4px;
-        width: 185px;
+        width: fit-content;
         /* height: 400px; */
 
     }
 
     .products-img {
-        width: 164px;
+        width: fit-content;
         height: 164px;
     }
 

@@ -14,7 +14,7 @@ const CategoryProducts = () => {
        dispatch(loadsideNavCategoryProductData(categoryProducts))
         
 
-    },[dispatch])
+    },[products])
 
 
 

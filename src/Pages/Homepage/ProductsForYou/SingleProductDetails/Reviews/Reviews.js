@@ -28,7 +28,7 @@ const Reviews = () => {
     const prodId = useSelector((state) => state?.forYouProducts?.singleProduct?._id)
 
     const { isLoading, error, data, refetch } = useQuery(['repoData', prodId], () =>
-        fetch(`https://backedforreview-production-6464.up.railway.app/api/prodReview?prodId=${prodId}`).then(res =>
+        fetch(`https://backedforreview7.onrender.com/api/prodReview?prodId=${prodId}`).then(res =>
             res.json()
         )
     )
