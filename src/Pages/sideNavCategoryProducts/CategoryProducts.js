@@ -1,11 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import loadsideNavCategoryProductData from '../../redux/actionCreators/fetchSideNavCategoryProducts';
 
 
 const CategoryProducts = () => {
+    const navigate=useNavigate()
     const products=useSelector((state)=>state?.sideNavCategoryProducts?.products[0]?.products)
     
     const dispatch=useDispatch()
@@ -15,6 +16,10 @@ const CategoryProducts = () => {
         
 
     },[products])
+    const handleProductDetails = (id) => {
+        console.log(id)
+        navigate(`/details/${id}`)
+    }
 
 
 
@@ -30,6 +35,7 @@ const CategoryProducts = () => {
                         products?.map(product =>
                             <div
                                 key={product._id}
+                                onClick={() => handleProductDetails(product._id)}
                                  className="s-product">
                                 <img className='s-products-img' src={`https://brandatoz.com${product.image.split(",")[0]}`} alt="" />
                                 <div className="product-detail-info">

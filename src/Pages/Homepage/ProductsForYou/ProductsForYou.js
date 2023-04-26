@@ -39,7 +39,7 @@ const ProductsForYou = () => {
             <div className='flex justify-center'>
                 <div className="for-you-products">
                     {
-                        products.slice(0, 16).map(product => <SingleForYouProduct
+                        products.slice(0,50).map(product => <SingleForYouProduct
                             key={product._id}
                             product={product}
                         ></SingleForYouProduct>)
