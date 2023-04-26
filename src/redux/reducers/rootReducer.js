@@ -7,6 +7,7 @@ import { reviewReducer } from "./reviewReducer";
 import searchInputReducer from "./searchReducer";
 import shopHompageReducer from "./shopHomepageReducer";
 import shoppingMallReducer from "./shoppingMallReducer";
+import categoryProducts from "./sideNavCategoryReducer";
 
 const rootReducer = combineReducers({
     navbar: navbarReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     user: shopHompageReducer,
     productsReducer: productsReducer,
     searchProduct: searchInputReducer,
-    reviews:reviewReducer
+    reviews:reviewReducer,
+    sideNavCategoryProducts:categoryProducts
 });
 
 export default rootReducer;

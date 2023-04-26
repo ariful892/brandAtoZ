@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Products = () => {
     const state = useSelector((state) => state?.productsReducer?.products?.products)
     return (
-        <div className='md:px-[220px] my-[40px] '>
+        <div className='md:px-[220px] my-[40px]'>
             <h1 className='text-center text-white text-[25px] my-[30px]'>Products of the Shop</h1>
             {state?.length === 0 && <><h1 className='text-center text-white text-[25px] '>There is no Products!!!</h1></>}
             <div className='grid grid-cols-2 md:grid-cols-4 gap-5 ' >

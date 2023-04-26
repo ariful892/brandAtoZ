@@ -21,6 +21,7 @@ import Carts from './Pages/Carts/Carts';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CategoryProducts from './Pages/sideNavCategoryProducts/CategoryProducts';
 
 
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='mall/:mallName' element={<ShoppingMall></ShoppingMall>}></Route>
           <Route path='cart' element={<Carts></Carts>}></Route>
           <Route path='search' element={<SearchProducts></SearchProducts>}></Route>
+          <Route path='sidenavCategory/:categoryProducts' element={<CategoryProducts></CategoryProducts>}></Route>
           <Route path='details/:id' element={<SingleProductDetails></SingleProductDetails>}></Route>
           <Route path='shop' element={<Shop></Shop>}>
             {/* <Route path='home' element={<ShopHomePage></ShopHomePage>}></Route> */}

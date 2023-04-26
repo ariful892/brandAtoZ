@@ -116,6 +116,14 @@ const Nav = ({ modalOpen, setModalOpen }) => {
     }
 
 
+    const handleSideNavCategory=(categoryName)=>{
+        navigate(`/sidenavCategory/${categoryName}`)
+        setNav(!nav)
+
+
+    }
+
+
 
     return (
 
@@ -235,7 +243,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
                
 
-                    <div className='mt-[20px] px-[40px]'>
+                    <div className='mt-[6px] px-[40px]'>
                         <div className='flex justify-between items-center text-[#010203]'>
                             <h1 className=' text-[20px] md:text-[24px]'>Categories</h1>
                             <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer z-10" />
@@ -244,17 +252,17 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                         </div>
 
-                        {featuredCategories.map((s) => <><div className='flex flex-col mt-[25px] space-y-1 '>
+                        {featuredCategories?.map((s) => <><div className='flex flex-col mt-[25px] space-y-1 '>
 
                             <div className='flex justify-between items-center'>
                                 <div className='flex justify-start items-center space-x-3 text-sm'>
                                     {/* <FolderMinusIcon className="h-4 w-4" /> */}
 
-                                    <a href={`https://brandatoz.com/search/category/${s}`} rel="noopener noreferrer">
-                                        <p className=''>{s}</p>
+                                    
+                                        <p onClick={()=>handleSideNavCategory(s)} className='cursor-pointer'>{s}</p>
 
 
-                                    </a>
+                                    
                                 </div>
 
                             </div>

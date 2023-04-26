@@ -38,3 +38,8 @@ export const REVIEW_REQUEST = 'REVIEW_REQUEST';
 export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
 export const REVIEW_FAIL = 'REVIEW_FAIL';
 
+
+//sidenav category products
+
+export const SIDENAVCATEGORYPRODUCTS='SIDENAVCATEGORYPRODUCTS'
+
