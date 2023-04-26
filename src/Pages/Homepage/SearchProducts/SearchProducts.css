@@ -114,7 +114,7 @@
 /* Mobile device */
 @media screen and (max-width:692px) {
     .s-products {
-        width: fit-content;
+        width: 380px;
         height: fit-content;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
