@@ -3,23 +3,44 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import loadsideNavCategoryProductData from '../../redux/actionCreators/fetchSideNavCategoryProducts';
+import Loading from '../Shared/Loading/Loading';
+import { useState } from 'react';
 
 
 const CategoryProducts = () => {
     const navigate=useNavigate()
     const products=useSelector((state)=>state?.sideNavCategoryProducts?.products[0]?.products)
+    const pr=useSelector((state)=>state?.sideNavCategoryProducts)
+    const [loading,setLoading]=useState(false)
+    // const products2=products[0]?.products
+    // console.log(products,products2)
+    
+    
     
     const dispatch=useDispatch()
     const {categoryProducts} =useParams()
     useEffect(()=>{
-       dispatch(loadsideNavCategoryProductData(categoryProducts))
+       dispatch(loadsideNavCategoryProductData(categoryProducts,loading,setLoading))
         
 
-    },[products])
+    },[categoryProducts])
     const handleProductDetails = (id) => {
         console.log(id)
         navigate(`/details/${id}`)
     }
+
+
+
+    
+    if(loading){
+        return <Loading></Loading>
+        
+    
+
+    }
+
+
+   
 
 
 
@@ -67,7 +88,6 @@ const CategoryProducts = () => {
     if (!products?.length) {
         content = <h2 className='text-2xl text-center mb-8'>No item found!</h2>
     }
-
 
 
 

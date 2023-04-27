@@ -7,6 +7,7 @@ import ProductsForYou from './ProductsForYou/ProductsForYou';
 import ShoppingMalls from './ShoppingMalls/ShoppingMalls';
 import TopSellers from './TopSellers/TopSellers';
 import display from '../../assets/display-picture.png';
+import Pagination from './Pagination/Pagination';
 
 const Homepage = () => {
 
@@ -27,6 +28,7 @@ const Homepage = () => {
             {/* <HelloMall></HelloMall> */}
             {/* <TopSellers></TopSellers> */}
             <ProductsForYou></ProductsForYou>
+            <Pagination></Pagination>
         </div>
     );
 };

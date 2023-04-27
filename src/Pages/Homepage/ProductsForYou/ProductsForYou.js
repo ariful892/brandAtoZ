@@ -5,11 +5,13 @@ import Loading from '../../Shared/Loading/Loading';
 import SingleForYouProduct from './SingleForYouProduct/SingleForYouProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import loadProductsForYouData from '../../../redux/thunk/products/fetchProductsForYouData';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsForYou = () => {
 
 
     const dispatch = useDispatch();
+    const navigate=useNavigate()
     const products = useSelector((state) => state.forYouProducts.products);
 
     console.log(products)
@@ -32,6 +34,11 @@ const ProductsForYou = () => {
 
     // const forYouProducts = allProducts.products.slice(0, 16);
 
+    const handleProducts=()=>{
+        navigate(`/search`)
+        
+    }
+
     return (
         <div className='products-for-container mx-3 lg:mx-5'>
             <h2 className='section-title'>Products For You</h2>
@@ -47,6 +54,10 @@ const ProductsForYou = () => {
 
 
                 </div>
+            </div>
+
+            <div className='text-center'>
+                <button onClick={handleProducts} className='load-btn'>Show All Products</button>
             </div>
         </div>
     );

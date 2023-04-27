@@ -8,6 +8,7 @@ import searchInputReducer from "./searchReducer";
 import shopHompageReducer from "./shopHomepageReducer";
 import shoppingMallReducer from "./shoppingMallReducer";
 import categoryProducts from "./sideNavCategoryReducer";
+import pagitedProducts from "./productsWithPaginationReducer";
 
 const rootReducer = combineReducers({
     navbar: navbarReducer,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     productsReducer: productsReducer,
     searchProduct: searchInputReducer,
     reviews:reviewReducer,
-    sideNavCategoryProducts:categoryProducts
+    sideNavCategoryProducts:categoryProducts,
+    pagination:pagitedProducts
 });
 
 export default rootReducer;
