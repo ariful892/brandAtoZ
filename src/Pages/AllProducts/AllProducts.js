@@ -19,7 +19,7 @@ const AllProducts = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='mt-[150px] md:mt-[80px]'>
             {/* <h1 className='mt-[100px] text-red-700'>{number}</h1> */}
 
             <div className='products-for-container mx-3 lg:mx-5'>
