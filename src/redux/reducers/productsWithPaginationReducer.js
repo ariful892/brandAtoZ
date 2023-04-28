@@ -17,9 +17,9 @@ const pagitedProducts=(state=initialState,actions)=>{
 
         case PRODUCTS_PAGINATION_SUCCESS:{
             return{
-                ...state,
+                
                 loading1:false,
-                paginated_products:[actions.payload]
+                paginated_products:actions.payload
             }
 
         }

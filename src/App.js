@@ -7,6 +7,7 @@ import Homepage from './Pages/Homepage/Homepage';
 import ShoppingMall from './Pages/ShoppingMall/ShoppingMall';
 import Shop from './Pages/Shop/Shop';
 import AllProducts from './Pages/Shop/AllProducts/AllProducts';
+import AllProducts2 from './Pages/AllProducts/AllProducts';
 import Profile from './Pages/Shop/Profile/Profile';
 import SingleProductDetails from './Pages/Homepage/ProductsForYou/SingleProductDetails/SingleProductDetails';
 import ScrollToTop from './Pages/ScrollToTop/ScrollToTop';
@@ -46,6 +47,7 @@ function App() {
           <Route path='cart' element={<Carts></Carts>}></Route>
           <Route path='search' element={<SearchProducts></SearchProducts>}></Route>
           <Route path='sidenavCategory/:categoryProducts' element={<CategoryProducts></CategoryProducts>}></Route>
+          <Route path='paginatedProducts/:number' element={<AllProducts2></AllProducts2>}></Route>
           <Route path='details/:id' element={<SingleProductDetails></SingleProductDetails>}></Route>
           <Route path='shop' element={<Shop></Shop>}>
             {/* <Route path='home' element={<ShopHomePage></ShopHomePage>}></Route> */}

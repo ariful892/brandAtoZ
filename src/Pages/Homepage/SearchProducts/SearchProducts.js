@@ -8,6 +8,7 @@ import starlight from '../../../assets/icons/starlight.png';
 import heart from '../../../assets/icons/heart.png';
 import { searchInput } from '../../../redux/actionCreators/searchAction';
 import loadSearchProducts from '../../../redux/thunk/products/fetchSearchProducts';
+import ReactPaginate from 'react-paginate';
 
 
 const SearchProducts = () => {
@@ -20,7 +21,7 @@ const SearchProducts = () => {
 
     useEffect(() => {
         dispatch(loadSearchProducts(searchData.input))
-    }, [])
+    }, [searchData.input])
 
     const handleProductDetails = (id) => {
         console.log(id)
@@ -50,14 +51,14 @@ const SearchProducts = () => {
 
     let content;
 
-    if (searchData.searchProducts.length) {
+    if (searchData?.searchProducts?.products?.length) {
         content = <div >
-            <h2 className='text-2xl text-center mb-8'>Items found: {searchData.searchProducts.length}</h2>
+            <h2 className='text-2xl text-center mb-8'>Items found: {searchData?.searchProducts?.products?.length}</h2>
 
             <div className='flex justify-center'>
                 <div className="s-products">
                     {
-                        searchData.searchProducts.map(product =>
+                        searchData?.searchProducts?.products?.map(product =>
                             <div
                                 key={product._id}
                                 onClick={() => handleProductDetails(product._id)} className="s-product">
@@ -88,9 +89,27 @@ const SearchProducts = () => {
         </div>
     }
 
-    if (!searchData.searchProducts.length) {
+    if (!searchData?.searchProducts?.products?.length) {
         content = <h2 className='text-2xl text-center mb-8'>No item found!</h2>
     }
+
+
+    const handleClick = async (data) => {
+        const number = data.selected + 1;
+        console.log(number)
+        dispatch(loadSearchProducts(searchData.input,number))
+
+        
+
+       // dispatch(loadsProductsPagination(number))
+
+       
+       
+
+       
+
+   }
+
 
     return (
         <div className=' search-product-container'>
@@ -104,6 +123,54 @@ const SearchProducts = () => {
 
 
             {content}
+
+
+
+            <div className='mt-[100px]'>
+
+
+
+                <div className=' h-[150px] mt-[10px]  pt-[20px]'>
+
+
+                    <ReactPaginate
+
+                        previousLabel={'<'}
+                        nextLabel={'>'}
+                        breakLabel={'...'}
+                        pageCount={8}
+                        onPageActive={handleClick}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={1}
+                        onPageChange={handleClick}
+                        containerClassName={'flex justify-center items-center mt-[20px]  space-x-2'}
+
+                        pageLinkClassName={'border-2 border-gray-400 px-[10px] rounded-full py-[7px]  md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+
+                        // previousClassName={' px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
+                        previousLinkClassName={'rounded-full  border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+
+
+                        // nextClassName={'h-[20px] px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
+                        nextLinkClassName={'rounded-full   border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+                        // breakLinkClassName={'px-[20px] py-[10px] text-[#FFFFFF] transition-colors duration-150 bg-white  bg-[#333333]  focus:shadow-outline '}
+                        activeLinkClassName={' text-[#FFFFFF] transition-colors duration-150  border-none bg-blue-800 focus:shadow-outline'}
+
+
+
+
+
+
+
+
+
+
+
+                    />
+                </div>
+
+
+            </div>
 
         </div>
     );

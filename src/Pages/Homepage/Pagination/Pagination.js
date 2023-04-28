@@ -3,30 +3,40 @@ import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import loadsProductsPagination from '../../../redux/actionCreators/productsWithPaginationAction';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 const Pagination = () => {
-    const product = useSelector((state) => state?.pagination?.paginated_products[0]?.products);
-    console.log(product)
-    const dispatch=useDispatch()
+   
+   
+    // console.log(product)
+   
+    const navigate=useNavigate()
+    
     let number
 
-    useEffect(()=>{
-
-        dispatch(loadsProductsPagination(number))
-    },[])
+    
 
 
     const handleClick = async (data) => {
          number = data.selected + 1;
+         console.log(number)
 
-        dispatch(loadsProductsPagination(number))
+         navigate(`/paginatedProducts/${number}`)
+
+        // dispatch(loadsProductsPagination(number))
+
         
         
 
         
 
     }
+
+    
+
+
+   
     
 
 
@@ -35,33 +45,7 @@ const Pagination = () => {
     return (
         <div className='mt-[100px]'>
 
-            <div className='products-for-container mx-3 lg:mx-5'>
-            <h2 className='section-title '>All Products</h2>
-            <div className='flex justify-center'>
-                <div className="for-you-products">
-                    {
-                        product?.map(p => <>
-                         <Link to={`/details/${p._id}`} className="single-product" >
-            <div className='img-container'>
-                <img className='product-img' src={`https://brandatoz.com${p.image.split(",")[0]}`} alt="" />
-            </div>
-            <div className="product-details">
-                <p className='product-name'>{p.name}</p>
-                <p className='product-type'>Sit eu</p>
-                <h2 className='product-price'>BDT <span>{p.price}</span></h2>
-            </div>
-        </Link>
-                        </>
-                           
-                        )
-                    }
-
-
-                </div>
-            </div>
-           
-
-            </div>
+            
 
 <div className=' h-[150px] mt-[10px]  pt-[20px]'>
 
@@ -72,6 +56,7 @@ const Pagination = () => {
     nextLabel={'>'}
     breakLabel={'...'}
     pageCount={8}
+    onPageActive={handleClick}
     marginPagesDisplayed={2}
     pageRangeDisplayed={1}
     onPageChange={handleClick}
