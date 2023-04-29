@@ -47,7 +47,7 @@ function App() {
           <Route path='cart' element={<Carts></Carts>}></Route>
           <Route path='search' element={<SearchProducts></SearchProducts>}></Route>
           <Route path='sidenavCategory/:categoryProducts' element={<CategoryProducts></CategoryProducts>}></Route>
-          <Route path='paginatedProducts/:number' element={<AllProducts2></AllProducts2>}></Route>
+          <Route path='paginatedProducts' element={<AllProducts2></AllProducts2>}></Route>
           <Route path='details/:id' element={<SingleProductDetails></SingleProductDetails>}></Route>
           <Route path='shop' element={<Shop></Shop>}>
             {/* <Route path='home' element={<ShopHomePage></ShopHomePage>}></Route> */}

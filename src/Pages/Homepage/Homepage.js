@@ -28,7 +28,7 @@ const Homepage = () => {
             {/* <HelloMall></HelloMall> */}
             {/* <TopSellers></TopSellers> */}
             <ProductsForYou></ProductsForYou>
-            <Pagination></Pagination>
+            {/* <Pagination></Pagination> */}
         </div>
     );
 };

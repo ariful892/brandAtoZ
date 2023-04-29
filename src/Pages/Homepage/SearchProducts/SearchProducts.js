@@ -126,7 +126,7 @@ const SearchProducts = () => {
 
 
 
-            <div className='mt-[100px]'>
+           { searchData?.searchProducts?.products?.length>=50&&<div className='mt-[100px]'>
 
 
 
@@ -170,7 +170,7 @@ const SearchProducts = () => {
                 </div>
 
 
-            </div>
+            </div>}
 
         </div>
     );

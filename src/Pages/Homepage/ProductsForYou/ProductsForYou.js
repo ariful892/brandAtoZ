@@ -35,7 +35,7 @@ const ProductsForYou = () => {
     // const forYouProducts = allProducts.products.slice(0, 16);
 
     const handleProducts=()=>{
-        navigate(`/search`)
+        navigate(`/paginatedProducts`)
         
     }
 
