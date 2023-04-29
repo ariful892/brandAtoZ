@@ -117,7 +117,7 @@ const CategoryProducts = () => {
 
 
 
-            {products.length&&<div className='mt-[100px]'>
+            {products?.length&&<div className='mt-[100px]'>
 
 
 
