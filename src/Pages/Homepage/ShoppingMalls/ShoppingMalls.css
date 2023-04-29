@@ -287,6 +287,7 @@
     .shop-container {
         /* width: 188px; */
         height: 330px;
+        padding: 0px;
         /* padding: 8px;
         gap: 12px; */
     }

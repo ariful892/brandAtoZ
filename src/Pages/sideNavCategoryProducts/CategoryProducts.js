@@ -131,7 +131,7 @@ const CategoryProducts = () => {
                         breakLabel={'...'}
                         pageCount={8}
                         onPageActive={handleClick}
-                        marginPagesDisplayed={2}
+                        marginPagesDisplayed={7}
                         pageRangeDisplayed={1}
                         onPageChange={handleClick}
                         containerClassName={'flex justify-center items-center mt-[20px]  space-x-2'}

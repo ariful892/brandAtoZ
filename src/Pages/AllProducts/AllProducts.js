@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import loadsProductsPagination, { loadAllProductsPagination } from '../../redux/actionCreators/productsWithPaginationAction';
@@ -11,6 +11,8 @@ const AllProducts = () => {
   
     const dispatch = useDispatch()
     const { loading1, paginated_products } = useSelector((state) => state?.pagination);
+    const [currentPage, setCurrentPage] = useState(1); 
+    
 
     useEffect(() => {
 
@@ -47,6 +49,8 @@ const AllProducts = () => {
    
     return (
         <div className='mt-[150px] md:mt-[80px]'>
+
+            {/* <h1 className='text-2xl text-center text-red-700'>{paginated_products?.page}</h1> */}
             {/* <h1 className='mt-[100px] text-red-700'>{number}</h1> */}
 
             <div className='products-for-container mx-3 lg:mx-5'>
@@ -93,9 +97,10 @@ const AllProducts = () => {
                         breakLabel={'...'}
                         pageCount={8}
                         onPageActive={handleClick}
-                        marginPagesDisplayed={2}
+                        marginPagesDisplayed={7}
                         pageRangeDisplayed={1}
                         onPageChange={handleClick}
+                        forcePage={currentPage}
                         containerClassName={'flex justify-center items-center mt-[20px]  space-x-2'}
 
                         pageLinkClassName={'border-2 border-gray-400 px-[10px] rounded-full py-[7px]  md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
