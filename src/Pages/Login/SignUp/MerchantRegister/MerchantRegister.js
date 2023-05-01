@@ -83,10 +83,10 @@ const MerchantRegister = () => {
                     <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='name' placeholder='Username' required value={name} onChange={onChange} />
                     
                    
-                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='password' placeholder='Password' required value={password} onChange={onChange}/>
-                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='confirmPassword' placeholder='Confirm Password' required value={confirmPassword} onChange={onChange} />
+                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="password" name='password' placeholder='Password' required value={password} onChange={onChange}/>
+                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="password" name='confirmPassword' placeholder='Confirm Password' required value={confirmPassword} onChange={onChange} />
                     <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='phnNo' placeholder='Phone No/Email'required value={phnNo} onChange={onChange} />
-                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='email' placeholder='email'required value={email} onChange={onChange} />
+                    <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='email' placeholder='email/Optional' value={email} onChange={onChange} />
                     {/* <input className='border-2 border-[#5C738A] md:w-2/4 w-full  rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" name='isSeller' placeholder='isSeller' /> */}
                     <button type='submit' className='bg-[#DE3D3A] text-white py-[8px] px-[26px] rounded-[8px] md:w-1/4 w-full'>Setup Your Shop</button>
 
