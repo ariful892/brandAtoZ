@@ -23,15 +23,18 @@ import Loading from '../Loading/Loading';
 import { useQuery } from 'react-query';
 import { searchInput } from '../../../redux/actionCreators/searchAction';
 import { useRef } from 'react';
+import Mycontext from '../../../../src/Mycontext';
+import Login from '../../Login/Login/Login';
+import { useContext } from 'react';
 
 
 const Nav = ({ modalOpen, setModalOpen }) => {
 
-
+    // const { nav2, setNav2 } = useContext(Mycontext);
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const [nav, setNav] = useState(false)
-    const [nav2, setNav2] = useState(false)
+     const [nav2, setNav2] = useState(false)
     const [nav3, setNav3] = useState(false)
     const searchRef = useRef(null)
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
@@ -63,10 +66,11 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
     const signOutHandler = () => {
         dispatch(signout())
+        navigate('/')
 
     }
 
-    const handleNav2=()=>{
+    const handleNav2 = () => {
         setNav3(!nav3)
 
     }
@@ -100,10 +104,10 @@ const Nav = ({ modalOpen, setModalOpen }) => {
             // 👇 Get input value
             dispatch(searchInput(searchText))
             setNav3(!nav3)
-           
+
             navigate('/search')
             searchRef.current.value = "";
-           
+
             //   setUpdated(message);
         }
     };
@@ -116,7 +120,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
     }
 
 
-    const handleSideNavCategory=(categoryName)=>{
+    const handleSideNavCategory = (categoryName) => {
         navigate(`/sidenavCategory/${categoryName}`)
         setNav(!nav)
 
@@ -205,76 +209,76 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
                 </div>
 
-                  <div className=' flex justify-between items-center space-x-4 md:hidden'>
+                <div className=' flex justify-between items-center space-x-4 md:hidden'>
 
 
-                  <div onClick={handleNav2} className='   md:hidden'>
+                    <div onClick={handleNav2} className='   md:hidden'>
                         <MagnifyingGlassIcon className="h-6 w-6 " />
 
                     </div>
 
 
 
-                <div onClick={() => setNav2(!nav2)} className='md:hidden'>
+                    <div onClick={() => setNav2(!nav2)} className='md:hidden'>
 
-                    {
-                        !nav2 ? <ShoppingBagIcon className="h-6 w-6 text-blue-500" /> : <XMarkIcon className="h-6 w-6 text-black" />
+                        {
+                            !nav2 ? <ShoppingBagIcon className="h-6 w-6 text-blue-500" /> : <XMarkIcon className="h-6 w-6 text-black" />
 
-                    }
+                        }
 
-                </div>
+                    </div>
 
 
-                <div onClick={handleNav} className='   md:hidden'>
+                    <div onClick={handleNav} className='   md:hidden'>
                         <Bars2Icon className="h-6 w-6 " />
 
                     </div>
 
-                  </div>
-               
+                </div>
+
 
             </div>
 
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
 
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
-                <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300'}>
+            <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300'}>
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
-               
-
-                    <div className='mt-[6px] px-[40px]'>
-                        <div className='flex justify-between items-center text-[#010203]'>
-                            <h1 className=' text-[20px] md:text-[24px]'>Categories</h1>
-                            <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer z-10" />
 
 
-
-                        </div>
-
-                        {featuredCategories?.map((s) => <><div className='flex flex-col mt-[25px] space-y-1 '>
-
-                            <div className='flex justify-between items-center'>
-                                <div className='flex justify-start items-center space-x-3 text-sm'>
-                                    {/* <FolderMinusIcon className="h-4 w-4" /> */}
-
-                                    
-                                        <p onClick={()=>handleSideNavCategory(s)} className='cursor-pointer'>{s}</p>
+                <div className='mt-[6px] px-[40px]'>
+                    <div className='flex justify-between items-center text-[#010203]'>
+                        <h1 className=' text-[20px] md:text-[24px]'>Categories</h1>
+                        <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer z-10" />
 
 
-                                    
-                                </div>
-
-                            </div>
-
-                        </div></>)}
 
                     </div>
 
-                
-                   
+                    {featuredCategories?.map((s) => <><div className='flex flex-col mt-[25px] space-y-1 '>
+
+                        <div className='flex justify-between items-center'>
+                            <div className='flex justify-start items-center space-x-3 text-sm'>
+                                {/* <FolderMinusIcon className="h-4 w-4" /> */}
+
+
+                                <p onClick={() => handleSideNavCategory(s)} className='cursor-pointer'>{s}</p>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div></>)}
+
+                </div>
+
+
+
                 {/* uporer */}
-                
+
 
             </div>
             {/* nicher */}
@@ -284,18 +288,18 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
             <div className={!nav3 ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300    '}>
 
-            <div className='flex justify-end items-center text-[#010203] mt-[30px]'>
-                           
-                            <XMarkIcon onClick={handleNav2} className="h-6 w-6  " />
+                <div className='flex justify-end items-center text-[#010203] mt-[30px]'>
+
+                    <XMarkIcon onClick={handleNav2} className="h-6 w-6  " />
 
 
 
-                        </div>
+                </div>
                 <div className='flex justify-start items-center space-x-2 mt-[30px]'>
-                <MagnifyingGlassIcon   className="h-8 w-8 text-black "/>
-                <input ref={searchRef}  onChange={handleSearchInput}
-                        onKeyDown={handleKeyDown}   type="text"  className='outline-none border-none text-[20px]  text-black' placeholder='Search'/>
-                       
+                    <MagnifyingGlassIcon className="h-8 w-8 text-black " />
+                    <input ref={searchRef} onChange={handleSearchInput}
+                        onKeyDown={handleKeyDown} type="text" className='outline-none border-none text-[20px]  text-black' placeholder='Search' />
+
 
 
                 </div>
@@ -313,10 +317,10 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
 
             </div>
-           
-            
 
-            
+
+
+
 
             <div className={!nav2 ? 'hidden' : 'absolute w-full bg-[#FFFFFF]  px-4 md:hidden'}>
 
@@ -348,6 +352,13 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                     Log in
                 </button></Link>}
             </div>
+
+
+            {/* <div className='hidden'>
+                <MyContext.Provider value={{ nav2, setNav2 }}>
+                   <Login></Login>
+                </MyContext.Provider>
+            </div> */}
 
         </div>
     );

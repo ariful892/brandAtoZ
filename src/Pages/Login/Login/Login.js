@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signin } from '../../../redux/actionCreators/authActions';
+import { useContext } from 'react';
+import Mycontext from '../../../../src/Mycontext'
 
 
 const Login = ({ setOpenModal }) => {
-    // console.log(toggle)
+    //  const { nav2, setNav2 } = useContext(Mycontext);
+    // console.log(nav2)
     const navigate = useNavigate()
 
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
@@ -77,12 +80,19 @@ const Login = ({ setOpenModal }) => {
         </div>
     }
 
+    const handleMarchentReg=()=>{
+          setOpenModal(false);
+          
+         navigate('/merchantRegister')
+       
+
+    }
 
     return (
         <div>
             <h1 className='text-3xl font-semibold my-[24px]'>Welcome Back</h1>
             <form onSubmit={onSubmit}>
-                <div className='flex flex-col  space-y-6 '>
+                <div className='flex flex-col  space-y-6 mb-[35px]'>
                     <input className='border-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={phnNo} name='phnNo' ref={phnRef} placeholder='Phone No' onChange={onChange} />
 
                     <input className='border-2 border-[#5C738A] w-full rounded-[8px] px-[16px] py-[8px] text-[16px]  text-[#5C738A]' type="text" value={password} name='password' ref={passwordRef} placeholder='Password' onChange={onChange} />
@@ -94,6 +104,8 @@ const Login = ({ setOpenModal }) => {
 
                 </div>
             </form>
+
+            <h1 onClick={handleMarchentReg} className='text-blue-700 font-bold text-xl cursor-pointer'>Register as a Merchant</h1>
 
         </div>
     );

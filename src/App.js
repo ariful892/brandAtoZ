@@ -23,6 +23,9 @@ import Carts from './Pages/Carts/Carts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CategoryProducts from './Pages/sideNavCategoryProducts/CategoryProducts';
+import MerchantRegister from './Pages/Login/SignUp/MerchantRegister/MerchantRegister';
+import SellerSelectShopType from './Pages/Login/SignUp/SellerSelectShopType/SellerSelectShopType';
+import SellerShopDetailsCreate from './Pages/Login/SignUp/SellerShopDetailsCreate/SellerShopDetailsCreate';
 
 
 
@@ -48,6 +51,9 @@ function App() {
           <Route path='search' element={<SearchProducts></SearchProducts>}></Route>
           <Route path='sidenavCategory/:categoryProducts' element={<CategoryProducts></CategoryProducts>}></Route>
           <Route path='paginatedProducts' element={<AllProducts2></AllProducts2>}></Route>
+          <Route path='merchantRegister' element={<MerchantRegister></MerchantRegister>}></Route>
+          <Route path='sellerSelectShopType' element={<SellerSelectShopType></SellerSelectShopType>}></Route>
+          <Route path='sellerShopDetailsCreate' element={<SellerShopDetailsCreate></SellerShopDetailsCreate>}></Route>
           <Route path='details/:id' element={<SingleProductDetails></SingleProductDetails>}></Route>
           <Route path='shop' element={<Shop></Shop>}>
             {/* <Route path='home' element={<ShopHomePage></ShopHomePage>}></Route> */}
