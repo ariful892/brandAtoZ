@@ -1,4 +1,4 @@
-import { LOAD_FILTERED_SHOPS, LOAD_SHOPPING_MALLS, LOAD_SHOPS, SHOP_FILTER, SIDE_NAVBAR } from "../actionTypes/actionTypes"
+import { FETCHING_START, LOAD_FILTERED_SHOPS, LOAD_SHOPPING_MALLS, LOAD_SHOPS, SHOP_FILTER, SIDE_NAVBAR } from "../actionTypes/actionTypes"
 
 export const sideNavbar = () => {
     return {
@@ -36,4 +36,10 @@ export const filterShop = (floor) => {
     }
 }
 
+
+export const loadingAction = () => {
+    return {
+        type: FETCHING_START,
+    }
+}
 

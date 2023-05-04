@@ -125,6 +125,13 @@ const Nav = ({ modalOpen, setModalOpen }) => {
         setNav(!nav)
 
 
+
+
+    }
+
+    const handleUserProfile=()=>{
+        navigate('/userProfile')
+
     }
 
 
@@ -182,12 +189,14 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                         <label tabindex="0" class="inline-flex flex-shrink-0 cursor-pointer flex-wrap items-center justify-center bg-transparent  m-1"><div><MdArrowDropDown className='' size={30} /> </div></label>
                         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li className='ml-[-60px] shadow bg-base-100'><a onClick={signOutHandler} >Sign Out</a></li>
+                            <li className='ml-[-60px] shadow bg-base-100'><a onClick={handleUserProfile} >User Profile</a></li>
 
                         </ul>
                     </div>        </div> </>) || (userInfoRegister && <><div className='flex justify-center items-center'><h1 className='text-[25px] font-medium '>{userInfoRegister?.name}</h1> <div class="dropdown dropdown-hover">
                         <label tabindex="0" class="inline-flex flex-shrink-0 cursor-pointer flex-wrap items-center justify-center bg-transparent  m-1"><div><MdArrowDropDown className='' size={30} /> </div></label>
                         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li className='ml-[-60px] shadow bg-base-100'><a onClick={signOutHandler} >Sign Out</a></li>
+                            <li className='ml-[-60px] shadow bg-base-100'><a onClick={handleUserProfile} >User Profile</a></li>
 
                         </ul>
                     </div>  </div></>) || <Link to='/login'><button onClick={() => setModalOpen(true)} type="button" class="px-6
