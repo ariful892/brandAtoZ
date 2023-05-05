@@ -34,17 +34,19 @@ import Checkout from './Pages/Checkout/Checkout';
 function App() {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [nav, setNav] = useState(false)
 
   return (
-    <div className='overflow-x-hidden font-lato'>
+    <div>
+     {  <div className={nav?'overflow-x-hidden font-lato ':'overflow-x-hidden font-lato'}>
       <Provider store={store}>
 
         <ScrollToTop />
         {/* <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen}></Navbar> */}
-        <Nav modalOpen={modalOpen} setModalOpen={setModalOpen}></Nav>
+        <Nav nav={nav} setNav={setNav} modalOpen={modalOpen} setModalOpen={setModalOpen}></Nav>
 
         <Routes>
-          <Route path='/' element={<Homepage></Homepage>}>
+          <Route path='/' element={<Homepage nav={nav} setNav={setNav}></Homepage>}>
             <Route path='login' ></Route>
             <Route path='signup' ></Route>
           </Route>
@@ -73,7 +75,10 @@ function App() {
       </Provider>
 
       <ToastContainer></ToastContainer>
+    </div>}
+
     </div>
+   
   );
 }
 

@@ -9,27 +9,28 @@ import TopSellers from './TopSellers/TopSellers';
 import display from '../../assets/display-picture.png';
 import Pagination from './Pagination/Pagination';
 
-const Homepage = () => {
+const Homepage = ({nav,setNav}) => {
 
 
     return (
-        <div className='homepage-container'>
+        <div>
+            {<div className={nav?'homepage-container opacity-40 overflow-hidden':'homepage-container'}>
 
-            <img className='display-picture' src={display} alt="" />
-            {/* <div className='home-title-container'>
-                <h2 className='homepage-title'>Homepage</h2>
-            </div> */}
+                <img className='display-picture' src={display} alt="" />
 
 
 
-            <ShoppingMalls></ShoppingMalls>
-            {/* <FlashSale></FlashSale> */}
-            <Featured></Featured>
-            {/* <HelloMall></HelloMall> */}
-            {/* <TopSellers></TopSellers> */}
-            <ProductsForYou></ProductsForYou>
-            {/* <Pagination></Pagination> */}
+
+                <ShoppingMalls></ShoppingMalls>
+
+                <Featured></Featured>
+
+                <ProductsForYou></ProductsForYou>
+
+            </div>}
+
         </div>
+
     );
 };
 

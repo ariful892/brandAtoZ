@@ -28,13 +28,13 @@ import Login from '../../Login/Login/Login';
 import { useContext } from 'react';
 
 
-const Nav = ({ modalOpen, setModalOpen }) => {
+const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
 
     // const { nav2, setNav2 } = useContext(Mycontext);
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const [nav, setNav] = useState(false)
-     const [nav2, setNav2] = useState(false)
+    
+    const [nav2, setNav2] = useState(false)
     const [nav3, setNav3] = useState(false)
     const searchRef = useRef(null)
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
@@ -61,6 +61,9 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
     const handleNav = () => {
         setNav(!nav)
+       
+
+
     }
 
 
@@ -129,7 +132,7 @@ const Nav = ({ modalOpen, setModalOpen }) => {
 
     }
 
-    const handleUserProfile=()=>{
+    const handleUserProfile = () => {
         navigate('/userProfile')
 
     }
@@ -143,7 +146,9 @@ const Nav = ({ modalOpen, setModalOpen }) => {
         <div className='w-screen h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
             {modalOpen && <Modal setOpenModal={setModalOpen}></Modal>}
 
-            <div className='px-[5px]  md:px-[24px] flex justify-between items-center w-full h-full '>
+          
+
+            {<div className='px-[5px]  md:px-[24px] flex justify-between items-center w-full h-full  '>
                 <div className='flex items-center justify-start md:space-x-6 space-x-2'>
                     <div onClick={handleNav} className='hidden   md:w-[35px] md:h-[35px] bg-[#F0F5FA] md:flex justify-center items-center rounded-full cursor-pointer'>
                         <Bars3BottomLeftIcon className="h-6 w-6 " />
@@ -151,8 +156,8 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                     </div>
 
                     <Link to='/'><div className='flex flex-col justify-between items-center'>
-                        <img className='h-[25px] w-[90px]  md:h-[40px] md:w-[150px]' src="https://brandatoz.com/images/atoz.png" alt="" />
-                        <p className='text-[12px]  md:text-[14px]'>Easy Shopping</p>
+                        <img className='h-[15px] w-[60px]  md:h-[40px] md:w-[150px]' src="https://brandatoz.com/images/atoz.png" alt="" />
+                        <p className='text-[10px]  md:text-[14px]'>Easy Shopping</p>
                     </div></Link>
 
                 </div>
@@ -246,17 +251,17 @@ const Nav = ({ modalOpen, setModalOpen }) => {
                 </div>
 
 
-            </div>
+            </div>}
 
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
 
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
-            <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300'}>
+            <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300  '}>
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
 
 
-                <div className='mt-[6px] px-[40px]'>
+                <div className='mt-[6px] pl-[30px] pr-[10px] '>
                     <div className='flex justify-between items-center text-[#010203]'>
                         <h1 className=' text-[20px] md:text-[24px]'>Categories</h1>
                         <XMarkIcon onClick={handleNav} className="h-4 w-4 md:h-6 md:w-6 cursor-pointer z-10" />
