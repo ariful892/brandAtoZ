@@ -16,6 +16,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import loadShoppingMallData from '../../../redux/thunk/products/fetchShoppingMallData';
 import { searchInput } from '../../../redux/actionCreators/searchAction';
 
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+
+// import { Autoplay, Pagination, Navigation } from "swiper";
+
 
 const ShoppingMalls = () => {
 
@@ -149,6 +158,29 @@ const ShoppingMalls = () => {
                 <div className="non-selected-option"></div>
                 <div className="non-selected-option"></div>
             </div> */}
+
+            {/* <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide><img className='banner' src={banner1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide> <img className='banner' src={banner2} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='banner' src={banner1} alt="" />
+                </SwiperSlide>
+                <SwiperSlide> <img className='banner' src={banner2} alt="" /></SwiperSlide>
+
+            </Swiper> */}
 
             <div className="shop-type mx-5">
                 <div className="single-type">
