@@ -49,6 +49,15 @@
 
 /* Mobile device */
 @media screen and (max-width:692px) {
+
+
+    .homepage-container {
+        background-color: #F0F5FA;
+        overflow: hidden;
+        /* margin-top: 50px; */
+        padding-top: 52px;
+    
+    }
     .home-title-container {
         width: 95%;
         margin: auto;

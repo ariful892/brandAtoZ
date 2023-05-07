@@ -140,10 +140,8 @@ const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
 
 
     return (
-
-
-
-        <div className='w-screen h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
+        <div>
+        <div className='w-screen h-[52px] md:h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
             {modalOpen && <Modal setOpenModal={setModalOpen}></Modal>}
 
           
@@ -375,6 +373,12 @@ const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
             </div> */}
 
         </div>
+
+        </div>
+
+
+
+        
     );
 };
 

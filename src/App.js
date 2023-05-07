@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div>
-     {  <div className={nav?'overflow-x-hidden font-lato ':'overflow-x-hidden font-lato'}>
+     {  <div className={nav?'overflow-x-hidden font-lato  ':'overflow-x-hidden font-lato'}>
       <Provider store={store}>
 
         <ScrollToTop />
