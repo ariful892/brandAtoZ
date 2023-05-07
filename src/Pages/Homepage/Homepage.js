@@ -14,7 +14,7 @@ const Homepage = ({nav,setNav}) => {
 
     return (
         <div>
-            {<div className={nav?'homepage-container opacity-40 overflow-hidden':'homepage-container'}>
+            {<div className={nav?'homepage-container opacity-25 overflow-hidden':'homepage-container'}>
 
                 <img className='display-picture' src={display} alt="" />
 
