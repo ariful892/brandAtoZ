@@ -22,7 +22,7 @@ const SingleForYouProduct = ({ product }) => {
             </div>
 
 
-            <div className={!state?'absolute top-36 right-3 ':'hidden'}>
+            {/* <div className={!state?'absolute top-36 right-3 ':'hidden'}>
            <div className='h-[30px] w-[30px] flex justify-center items-center bg-white rounded-full'>
            <AiOutlineHeart  size={20} color={blue}/>
            </div>
@@ -30,7 +30,7 @@ const SingleForYouProduct = ({ product }) => {
            <AiOutlineEye  size={20} color={blue}/>
            </div>
 
-            </div>
+            </div> */}
 
 
             <div className="product-details">
