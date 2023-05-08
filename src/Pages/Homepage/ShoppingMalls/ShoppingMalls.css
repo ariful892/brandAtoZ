@@ -55,7 +55,7 @@
     grid-template-columns: repeat(2, 1fr);
     /* gap: 1px; */
     /* column-gap: 4px; */
-    justify-content: center;
+    /* justify-content: center; */
     margin-bottom: 80px;
 }
 
@@ -64,7 +64,7 @@
     height: 500px;
     padding: 8px;
     background: #FFFFFF;
-    border: 2px solid #F0F5FA;
+    /* border: 2px solid #F0F5FA; */
     border-radius: 8px;
 }
 
@@ -275,8 +275,8 @@
 
     .shopping-mall {
         /* width: 100%; */
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        /* justify-content: center; */
         /* row-gap: 24px; */
         /* column-gap: 8px; */
     }
@@ -284,9 +284,9 @@
 
     .shop-container {
         /* width: 188px; */
-        height: 330px;
-        /* padding: 8px;
-        gap: 12px; */
+        height: 180px;
+        /* padding: 8px; */
+        /* gap: 12px; */
     }
 
     /* .shop-container {
@@ -319,19 +319,12 @@
     }
 
     .shop-info-detail {
+        margin: 4px;
         /* margin-left: 8px;
         height: fit-content; */
         /* width: 80%; */
     }
 
-    .shop-name {
-        width: fit-content;
-        /* height: 48px; */
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 16px;
-        /* margin-bottom: 12px; */
-    }
 
 
     .shop-name {

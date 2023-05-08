@@ -36,66 +36,68 @@ const Homepage = ({ nav, setNav }) => {
             {<div className={nav ? 'homepage-container opacity-40 overflow-hidden' : 'homepage-container'}>
 
                 <div className="banner-container">
-                    <Swiper
-                        spaceBetween={30}
-                        centeredSlides={true}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        navigation={true}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper"
-                    >
-                        <SwiperSlide>
-                            <div className='banner-text'>
-                                <img className='display-picture' src={display} alt="" />
+                    <div className='carousel'>
+                        <Swiper
+                            spaceBetween={30}
+                            centeredSlides={true}
+                            autoplay={{
+                                delay: 2000,
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            className="mySwiper"
+                        >
+                            <SwiperSlide>
+                                <div className='banner-text'>
+                                    <img className='display-picture' src={display} alt="" />
 
-                                <div className='ml-5'>
-                                    <h2 className='text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
-                                    <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
-                                    <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    <div className='ml-5'>
+                                        <h2 className='text-2xl lg:text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
+                                        <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
+                                        <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='banner-text rounded-lg'>
-                                <img className='display-picture' src={display2} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='banner-text rounded-lg'>
+                                    <img className='display-picture' src={display2} alt="" />
 
-                                <div className='ml-5'>
-                                    <h2 className='text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
-                                    <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
-                                    <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    <div className='ml-5'>
+                                        <h2 className='text-2xl lg:text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
+                                        <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
+                                        <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='banner-text rounded-lg'>
-                                <img className='display-picture' src={display3} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='banner-text rounded-lg'>
+                                    <img className='display-picture' src={display3} alt="" />
 
-                                <div className='ml-5'>
-                                    <h2 className='text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
-                                    <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
-                                    <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    <div className='ml-5'>
+                                        <h2 className='text-2xl lg:text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
+                                        <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
+                                        <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className='banner-text rounded-lg'>
-                                <img className='display-picture' src={display4} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='banner-text rounded-lg'>
+                                    <img className='display-picture' src={display4} alt="" />
 
-                                <div className='ml-5'>
-                                    <h2 className='text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
-                                    <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
-                                    <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    <div className='ml-5'>
+                                        <h2 className='text-2xl lg:text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
+                                        <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
+                                        <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
+                            </SwiperSlide>
 
-                    </Swiper>
+                        </Swiper>
+                    </div>
 
                 </div>
 
