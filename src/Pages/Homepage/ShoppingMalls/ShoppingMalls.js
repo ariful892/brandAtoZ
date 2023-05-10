@@ -69,11 +69,11 @@ const ShoppingMalls = () => {
     }
 
 
-    const breakPoints = [
-        { width: 1, itemsToShow: 1 },
-        { width: 768, itemsToShow: 1 },
-        { width: 1200, itemsToShow: 1 },
-    ];
+    // const breakPoints = [
+    //     { width: 1, itemsToShow: 1 },
+    //     { width: 768, itemsToShow: 1 },
+    //     { width: 1200, itemsToShow: 1 },
+    // ];
 
     return (
         <div className='shopping-mall-container'>
@@ -82,7 +82,7 @@ const ShoppingMalls = () => {
                 <img className='search-btn' src={searchIcon} alt="" />
             </div> */}
 
-            <div className='search-filter-container mt-8 mx-3 lg:mx-5'>
+            {/* <div className='search-filter-container mt-8 mx-3 lg:mx-5'>
                 <div className='flex'>
                     <input
                         onChange={handleSearchInput}
@@ -91,7 +91,7 @@ const ShoppingMalls = () => {
                     <img onClick={handleSearch} className='search-btn' src={searchIcon} alt="" />
                 </div>
 
-                {/* <div className='flex w-full'> */}
+                <div className='flex w-full'>
                 <select className='location-select' name="" id="">
                     <option className='bg-white' value="">Farmgate</option>
                     <option className='bg-white' value="">Farmgate</option>
@@ -99,15 +99,16 @@ const ShoppingMalls = () => {
                 </select>
 
                 <button className='advance-btn'>Advance Search</button>
-            </div>
-            {/* </div> */}
+            </div> */}
+
 
             <div className='title-country-select-container mx-3 lg:mx-5'>
 
                 <h2 className='shopping-title'>Shopping Malls</h2>
 
                 <select className='location-select' name="" id="">
-                    <option className='bg-white' value="">Bangladesh</option>
+                    <option className='bg-white' value="">Dhaka Division</option>
+                    <option className='bg-white' value="">Chattogram Division</option>
                     {/* <option className='bg-white' value="">Bangladesh</option>
                     <option className='bg-white' value="">Bangladesh</option> */}
                 </select>
@@ -182,7 +183,7 @@ const ShoppingMalls = () => {
 
             </Swiper> */}
 
-            <div className="shop-type mx-5">
+            {/* <div className="shop-type mx-3 lg:mx-5">
                 <div className="single-type">
                     <img className='shop-type-icon' src={location2Icon} alt="" />
                     <h2 className='shop-type-title'>Physical Shops</h2>
@@ -206,7 +207,7 @@ const ShoppingMalls = () => {
                     <h2 className='shop-type-title'>Brands</h2>
                     <p className='type-details'>Montes, dictumst tristique est lectus egestas pharetra.</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
