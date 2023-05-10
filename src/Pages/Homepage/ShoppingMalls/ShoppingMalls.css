@@ -265,6 +265,7 @@
     .shopping-mall-container {
         /* width: 95%;
         margin: auto; */
+        margin-top: 24px;
     }
 
     .shopping-title {
@@ -366,8 +367,10 @@
     }
 
     .location-select {
-        padding: 8px 12px;
-
+        width: 120px;
+        height: 30px;
+        padding: 0px;
+        font-size: 10px;
     }
 
     .banner {
@@ -377,7 +380,7 @@
     .shop-type {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-        margin-top: 80px;
+        margin-top: 20px;
     }
 
     .single-type {

@@ -78,6 +78,10 @@
         background-color: white;
     }
 
+    .carousel {
+        padding-bottom: 24px;
+    }
+
     .banner-text {
 
         height: 400px;

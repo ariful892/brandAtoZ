@@ -11,6 +11,12 @@ import display2 from '../../assets/display-picture2.png';
 import display3 from '../../assets/display-picture3.png';
 import display4 from '../../assets/display-picture4.png';
 import display5 from '../../assets/display-picture5.png';
+import logo1 from '../../assets/logo1.png';
+import logo2 from '../../assets/logo2.png';
+import logo3 from '../../assets/logo3.jpg';
+import logo4 from '../../assets/logo4.png';
+import logo5 from '../../assets/logo5.png';
+import logo6 from '../../assets/logo6.png';
 // import Pagination from './Pagination/Pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,15 +26,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper';
 
 const Homepage = ({ nav, setNav }) => {
 
-    const breakPoints = [
-        { width: 1, itemsToShow: 1 },
-        { width: 768, itemsToShow: 1 },
-        { width: 1200, itemsToShow: 1 },
-    ];
+    // const breakPoints = [
+    //     { width: 1, itemsToShow: 1 },
+    //     { width: 768, itemsToShow: 1 },
+    //     { width: 1200, itemsToShow: 1 },
+    // ];
 
 
     return (
@@ -41,13 +47,13 @@ const Homepage = ({ nav, setNav }) => {
                             spaceBetween={30}
                             centeredSlides={true}
                             autoplay={{
-                                delay: 2000,
+                                delay: 2500,
                                 disableOnInteraction: false,
                             }}
                             pagination={{
                                 clickable: true,
                             }}
-                            navigation={true}
+                            // navigation={true}
                             modules={[Autoplay, Pagination, Navigation]}
                             className="mySwiper"
                         >
@@ -101,10 +107,66 @@ const Homepage = ({ nav, setNav }) => {
 
                 </div>
 
+                <div className="px-3 py-5 bg-white">
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={30}
+                        // centeredSlides={true}
+                        freeMode={true}
+                        autoplay={{
+                            delay: 1500,
+                            disableOnInteraction: false,
+                        }}
+                        // pagination={{
+                        //     clickable: true,
+                        // }}
+                        // navigation={true}
+                        modules={[Autoplay, Pagination, Navigation, FreeMode]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo1} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo2} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo3} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo4} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo5} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='ml-0 lg:ml-12'>
+                                <img className='w-24 mb-3' src={logo6} alt="" />
+                                <p className='text-xs lg:text-sm'>EASY RETURNS</p>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+
 
                 <ShoppingMalls></ShoppingMalls>
 
-                <Featured></Featured>
+                {/* <Featured></Featured> */}
 
                 <ProductsForYou></ProductsForYou>
 
