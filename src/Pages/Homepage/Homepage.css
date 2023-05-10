@@ -1,5 +1,6 @@
 .homepage-container {
     background-color: #F0F5FA;
+    /* background-color: black; */
     overflow: hidden;
     /* margin-top: 50px; */
     padding-top: 72px;
@@ -7,11 +8,12 @@
 }
 
 .banner-container {
-    margin-top: 12px;
+    margin-top: 16px;
     padding-top: 24px;
-    padding-left: 52px;
-    padding-right: 52px;
+    padding-left: 60px;
+    padding-right: 60px;
     padding-bottom: 28px;
+    /* background-color: black; */
     background-color: white;
 }
 
@@ -19,6 +21,7 @@
     border-radius: 16px;
     border: 1px solid rgb(190, 187, 187);
     padding-bottom: 36px;
+    /* background-color: white; */
 }
 
 .banner-text {
@@ -37,7 +40,7 @@
 
 }
 
-.homepage-title {
+/* .homepage-title {
     margin-top: 72px;
     font-weight: 700;
     font-size: 25px;
@@ -46,7 +49,7 @@
     width: fit-content;
     margin-bottom: 8px;
     margin-left: 130px;
-}
+} */
 
 /*----------------------
      Media Queries
@@ -57,7 +60,6 @@
 
 
     .homepage-container {
-        background-color: #F0F5FA;
         overflow: hidden;
         /* margin-top: 50px; */
         padding-top: 52px;
@@ -72,10 +74,9 @@
     .banner-container {
         margin-top: 12px;
         padding-top: 12px;
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
         padding-bottom: 20px;
-        background-color: white;
     }
 
     .carousel {
