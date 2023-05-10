@@ -254,7 +254,7 @@ const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
 
             {/* <div className={nav ? 'fixed left-0 top-[74px] w-full h-screen bg-black/80' : ''}> */}
-            <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300 md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300  '}>
+            <div className={!nav ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 transition delay-150 duration-700 ease-in-out md:fixed md:left-0 md:top-[74px]  md:w-[25%] md:h-screen md:bg-[#FFFFFF]  md:ease-in-out md:duration-300  '}>
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
                 {/* <div className={nav ? 'fixed left-0 top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF]  ease-in-out duration-300' : 'fixed left-[-100%] top-[74px] w-[70%] md:w-[25%] h-screen bg-[#FFFFFF] ease-in duration-500'}> */}
 

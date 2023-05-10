@@ -6,10 +6,12 @@ import SingleForYouProduct from './SingleForYouProduct/SingleForYouProduct';
 import { useDispatch, useSelector } from 'react-redux';
 import loadProductsForYouData from '../../../redux/thunk/products/fetchProductsForYouData';
 import { useNavigate } from 'react-router-dom';
+import Modal from '../../Login/LoginModal/Modal';
+import ProductModal from '../../Login/LoginModal/ProductModal';
 
 const ProductsForYou = () => {
 
-
+    const [openModal,setOpenModal]=useState(false)
     const dispatch = useDispatch();
     const navigate=useNavigate()
     const products = useSelector((state) => state.forYouProducts.products);
@@ -41,15 +43,26 @@ const ProductsForYou = () => {
 
     return (
         <div className='products-for-container mx-3 lg:mx-5'>
+                      
+
+           
+            
             <h2 className='section-title'>Products For You</h2>
 
             <div className='flex justify-center'>
-                <div className="for-you-products">
+            
+                <div className="for-you-products ">
+               
                     {
                         products.slice(0,50).map(product => <SingleForYouProduct
                             key={product._id}
                             product={product}
-                        ></SingleForYouProduct>)
+                            openModal={openModal}
+                            setOpenModal={setOpenModal}
+                        ></SingleForYouProduct>
+                        )
+
+                      
                     }
 
 
@@ -59,6 +72,8 @@ const ProductsForYou = () => {
             <div className='text-center'>
                 <button onClick={handleProducts} className='load-btn'>Show All Products</button>
             </div>
+
+            
         </div>
     );
 };

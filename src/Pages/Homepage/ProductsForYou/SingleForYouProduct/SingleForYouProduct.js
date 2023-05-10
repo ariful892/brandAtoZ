@@ -3,9 +3,15 @@ import { blue } from '@mui/material/colors';
 import React, { useState } from 'react';
 import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
+import ProductModal from '../../../Login/LoginModal/ProductModal';
+import Modal from '../../../Login/LoginModal/Modal';
+import { useSelector } from 'react-redux';
 
-const SingleForYouProduct = ({ product }) => {
+const SingleForYouProduct = ({ product,setOpenModal,openModal }) => {
     const [state,setState]=useState(false)
+    const [po,setPo]=useState([])
+    const products = useSelector((state) => state.forYouProducts.products);
+    
 
     const navigate = useNavigate();
     const productImg = product.image.split(',');
@@ -15,11 +21,45 @@ const SingleForYouProduct = ({ product }) => {
         // navigate(`/details/${product._id}`);
     }
 
+    // console.log(openModal)
+  
+    const handleModal=(prodId)=>{
+
+       
+
+        let p=products.filter((ps)=>ps._id===prodId)
+         console.log(p)
+         setOpenModal(true)
+         setPo(p)
+        
+      }
+    
+    
+
+    
+
+   
+
     return (
-        <Link to={`/details/${product._id}`} className="single-product relative" >
+        
+        <div className=' ' >
+           
+           
+           
+          
+             <div className="single-product relative  " >
+            {(openModal&&po?.length)? <div className='absolute right-40 md:top-0  md:right-40'>
+           <ProductModal setOpenModal={setOpenModal} product={product} po={po}  setPo={setPo}></ProductModal>
+
+            </div>: <div className='hidden'><ProductModal po={po}></ProductModal> </div>}
             <div onMouseMoveCapture={()=>setState(!state)} className='img-container '>
                 <img className='product-img' src={`https://brandatoz.com${productImg[0]}`} alt="" />
             </div>
+            
+           
+
+
+            
 
 
             {/* <div className={!state?'absolute top-36 right-3 ':'hidden'}>
@@ -31,6 +71,18 @@ const SingleForYouProduct = ({ product }) => {
            </div>
 
             </div> */}
+
+            {/* <div className='flex justify-center mt-4  '>
+            <button onClick={()=>handleModal(product._id)} class="btn btn-outline btn-sm btn-warning">Quick Look</button>
+          
+          
+            </div> */}
+
+            
+
+          
+
+           
 
 
             <div className="product-details">
@@ -56,7 +108,12 @@ const SingleForYouProduct = ({ product }) => {
               
                
             </div>
-        </Link>
+
+
+           <Link to={`/details/${product._id}`} ><div className='flex justify-center my-[10px]'><button  class="btn  btn-sm btn-info">More Info</button></div></Link> 
+           
+       </div>
+        </div>
     );
 };
 
