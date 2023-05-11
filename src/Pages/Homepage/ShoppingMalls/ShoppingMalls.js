@@ -7,6 +7,11 @@ import ticketIcon from '../../../assets/icons/Ticket.png';
 import subtractIcon from '../../../assets/icons/Subtract.png';
 import banner1 from '../../../assets/banner/banner1.png';
 import banner2 from '../../../assets/banner/banner2.png';
+import ctgMall1 from '../../../assets/Shopping-malls/sanmar.jpg';
+import ctgMall2 from '../../../assets/Shopping-malls/afmi-plaza.png';
+import ctgMall3 from '../../../assets/Shopping-malls/finlay.jpg';
+import ctgMall4 from '../../../assets/Shopping-malls/new-market.jpg';
+import ctgMall5 from '../../../assets/Shopping-malls/mimi-super-market.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import Carousel from "react-elastic-carousel";
 import Loading from '../../Shared/Loading/Loading';
@@ -106,17 +111,15 @@ const ShoppingMalls = () => {
 
                 <h2 className='shopping-title'>Shopping Malls</h2>
 
-                <select className='location-select' name="" id="">
+                {/* <select className='location-select' name="" id="">
                     <option className='bg-white' value="">Dhaka Division</option>
                     <option className='bg-white' value="">Chattogram Division</option>
-                    {/* <option className='bg-white' value="">Bangladesh</option>
-                    <option className='bg-white' value="">Bangladesh</option> */}
-                </select>
+                </select> */}
             </div>
 
 
             <div>
-
+                <h2 className='ml-3 lg:ml-5 mt-5 text-xl lg:text-2xl text-blue-600  font-semibold'>Dhaka Division</h2>
                 <div className='w-full flex justify-center'>
                     <div className='shopping-mall'>
                         {
@@ -125,6 +128,87 @@ const ShoppingMalls = () => {
                                 key={mall._id}
                             ></SingleMall>)
                         }
+                    </div>
+                </div>
+            </div>
+
+            {/* ctg malls */}
+            <div>
+                <h2 className='ml-3 lg:ml-5 mt-3 text-xl lg:text-2xl text-blue-600 font-semibold'>Chattogram Division</h2>
+                <div className='w-full flex justify-center'>
+                    <div className='shopping-mall'>
+                        <Link to={``} className='shop-container'>
+                            <div className='shop-img-container'>
+                                <img className='shop-img' src={ctgMall1} alt="" />
+
+                                <div className='flex justify-center'>
+                                    <div className="shop-info-detail">
+                                        <div className='w-full mx-auto'>
+                                            <h2 className='shop-name'>Sanmar Ocean City</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+
+                        <Link to={``} className='shop-container'>
+                            <div className='shop-img-container'>
+                                <img className='shop-img' src={ctgMall2} alt="" />
+
+                                <div className='flex justify-center'>
+                                    <div className="shop-info-detail">
+                                        <div className='w-full mx-auto'>
+                                            <h2 className='shop-name'>Afmi Plaza</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to={``} className='shop-container'>
+                            <div className='shop-img-container'>
+                                <img className='shop-img' src={ctgMall3} alt="" />
+
+                                <div className='flex justify-center'>
+                                    <div className="shop-info-detail">
+                                        <div className='w-full mx-auto'>
+                                            <h2 className='shop-name'>Finlay Square</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to={``} className='shop-container'>
+                            <div className='shop-img-container'>
+                                <img className='shop-img' src={ctgMall4} alt="" />
+
+                                <div className='flex justify-center'>
+                                    <div className="shop-info-detail">
+                                        <div className='w-full mx-auto'>
+                                            <h2 className='shop-name'>New Market</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link to={``} className='shop-container'>
+                            <div className='shop-img-container'>
+                                <img className='shop-img' src={ctgMall5} alt="" />
+
+                                <div className='flex justify-center'>
+                                    <div className="shop-info-detail">
+                                        <div className='w-full mx-auto'>
+                                            <h2 className='shop-name'>Mimi Super Market</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+
                     </div>
                 </div>
             </div>

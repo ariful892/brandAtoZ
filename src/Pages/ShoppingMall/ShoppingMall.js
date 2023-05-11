@@ -108,17 +108,17 @@ const ShoppingMall = () => {
     return (
         <div className='shopping-container'>
             <div className='mall-name-img-container '>
-                <div className='mall-name-address-container'>
+                <div className='lg:w-1/2 md:w-1/2'>
                     <h2 className='page-title'>Shopping Malls</h2>
                     <h2 className='mall-name'>{mallName}</h2>
                     <p className='mall-address'>KA-244, Kuril, Progoti Shoroni, Dhaka</p>
 
-                    <div className='flex'>
+                    <div className='follow-block-btn-container'>
                         <button className='follow-btn'>Follow</button>
                         <button className='block-btn'>Block</button>
                     </div>
                 </div>
-                <div>
+                <div className='lg:w-1/2 md:w-1/2'>
                     <img className='mall-img' src={`https://brandatoz.com/images/dokans/${mallName.split(" ").join("_")}.png`} alt="" />
                 </div>
             </div>
