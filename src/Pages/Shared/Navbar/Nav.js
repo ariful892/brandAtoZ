@@ -18,6 +18,7 @@ import {
 
 } from "react-router-dom";
 import Modal from '../../Login/LoginModal/Modal';
+import brandA_To_Z from '../../../assets/brand_A_To_z-removebg-preview.png'
 import { signout } from '../../../redux/actionCreators/authActions';
 import Loading from '../Loading/Loading';
 import { useQuery } from 'react-query';
@@ -141,21 +142,21 @@ const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
 
     return (
         <div>
-        <div className='w-screen h-[52px] md:h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
+        <div className='w-screen h-[42px] md:h-[72px] fixed z-10 bg-[#FFFFFF]  drop-shadow-[0_3px_5px_rgba(0,0,0,0.07)]'>
             {modalOpen && <Modal setOpenModal={setModalOpen}></Modal>}
 
           
 
             {<div className='px-[5px]  md:px-[24px] flex justify-between items-center w-full h-full  '>
-                <div className='flex items-center justify-start md:space-x-6 space-x-2'>
+                <div className='flex items-center justify-start md:space-x-4 space-x-2'>
                     <div onClick={handleNav} className='hidden   md:w-[35px] md:h-[35px] bg-[#F0F5FA] md:flex justify-center items-center rounded-full cursor-pointer'>
                         <Bars3BottomLeftIcon className="h-6 w-6 " />
 
                     </div>
 
                     <Link to='/'><div className='flex flex-col justify-between items-center'>
-                        <img className='h-[15px] w-[60px]  md:h-[40px] md:w-[150px]' src="https://brandatoz.com/images/atoz.png" alt="" />
-                        <p className='text-[10px]  md:text-[14px]'>Easy Shopping</p>
+                        <img className='h-[65px] w-[60px]  md:h-[100px] md:w-[150px]' src={brandA_To_Z} alt="" />
+                        {/* <p className='text-[10px]  md:text-[14px]'>Easy Shopping</p> */}
                     </div></Link>
 
                 </div>
@@ -298,7 +299,7 @@ const Nav = ({nav,setNav, modalOpen, setModalOpen }) => {
 
 
 
-            <div className={!nav3 ? 'hidden' : 'absolute w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in-out duration-300    '}>
+            <div className={!nav3 ? 'hidden' : 'fixed  w-full h-screen top-0 bg-[#FFFFFF]  px-4 ease-in duration-1000   '}>
 
                 <div className='flex justify-end items-center text-[#010203] mt-[30px]'>
 

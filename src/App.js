@@ -28,6 +28,11 @@ import SellerSelectShopType from './Pages/Login/SignUp/SellerSelectShopType/Sell
 import SellerShopDetailsCreate from './Pages/Login/SignUp/SellerShopDetailsCreate/SellerShopDetailsCreate';
 import UserProfile from './Pages/Login/UserProfile/UserProfile';
 import Checkout from './Pages/Checkout/Checkout';
+import About from './Pages/Shop/ShopHome/About/About';
+import Photos from './Pages/Shop/ShopHome/Photos/Photos';
+import Videos from './Pages/Shop/ShopHome/Videos/Videos';
+import Live from './Pages/Shop/ShopHome/Live/Live';
+import Reviews from './Pages/Shop/ShopHome/Reviews/Reviews';
 
 
 
@@ -64,7 +69,14 @@ function App() {
           
           <Route path='shop' element={<Shop></Shop>}>
             {/* <Route path='home' element={<ShopHomePage></ShopHomePage>}></Route> */}
-            <Route path='home/:id' element={<Seller></Seller>}></Route>
+            <Route path='home/:id' element={<Seller></Seller>}>
+              
+            </Route>
+            <Route path='about/:id' element={<About></About>}></Route>
+            <Route path='photos/:id' element={<Photos></Photos>}></Route>
+            <Route path='videos/:id' element={<Videos></Videos>}></Route>
+            <Route path='live/:id' element={<Live></Live>}></Route>
+            <Route path='reviews/:id' element={<Reviews></Reviews>}></Route>
             <Route path='products' element={<AllProducts></AllProducts>}></Route>
             <Route path='profile' element={<Profile></Profile>}></Route>
           </Route>
