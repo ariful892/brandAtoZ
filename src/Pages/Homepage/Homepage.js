@@ -47,7 +47,7 @@ const Homepage = ({ nav, setNav }) => {
                             spaceBetween={30}
                             centeredSlides={true}
                             autoplay={{
-                                delay: 2500,
+                                delay: 2000,
                                 disableOnInteraction: false,
                             }}
                             speed={1000}
@@ -108,7 +108,7 @@ const Homepage = ({ nav, setNav }) => {
 
                 </div>
 
-                <div className="px-3 py-5 bg-white mt-8">
+                <div className="px-3 py-5  mt-8">
                     <Swiper
                         slidesPerView={4}
                         spaceBetween={30}
@@ -116,7 +116,7 @@ const Homepage = ({ nav, setNav }) => {
                         // centeredSlides={true}
                         freeMode={true}
                         autoplay={{
-                            delay: 2500,
+                            delay: 1500,
                             disableOnInteraction: false,
                         }}
                         // pagination={{

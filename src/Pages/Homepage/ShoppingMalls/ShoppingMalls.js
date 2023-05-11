@@ -119,7 +119,7 @@ const ShoppingMalls = () => {
 
 
             <div>
-                <h2 className='ml-3 lg:ml-5 mt-5 text-xl lg:text-2xl text-blue-600 font-semibold'>Dhaka Division</h2>
+                <h2 className='ml-3 lg:ml-5 mt-5 text-xl lg:text-2xl text-blue-600  font-semibold'>Dhaka Division</h2>
                 <div className='w-full flex justify-center'>
                     <div className='shopping-mall'>
                         {
