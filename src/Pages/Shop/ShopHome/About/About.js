@@ -5,6 +5,7 @@ import Shop from '../../Shop';
 import googleMap from '../../../../assets/googleMap.jpg'
 import { useEffect } from 'react';
 import { createShopHomePAge } from '../../../../redux/actionCreators/shopHomepageActions';
+import ShopHome from '../ShopHome';
 
 const About = () => {
     // const id = useSelector((state) => state.user.id)
@@ -21,11 +22,13 @@ const About = () => {
         <div >
 
 
-            <div className='pt-[30px] md:pt-[50px] bg-black h-max'>
-                <Shop></Shop>
+            <div className=' bg-black h-max'>
+
+            <ShopHome></ShopHome>
+              
 
                 <div className=''>
-                    <img className='w-full h-[200px] md:h-[350px]' src={googleMap} alt="" />
+                    <img className='w-full  h-screen' src={googleMap} alt="" />
 
                 </div>
 
