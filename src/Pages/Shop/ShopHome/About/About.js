@@ -28,7 +28,7 @@ const About = () => {
               
 
                 <div className=''>
-                    <img className='w-full  h-screen' src={googleMap} alt="" />
+                    <img className='w-full h-[250px] md:h-screen' src={googleMap} alt="" />
 
                 </div>
 

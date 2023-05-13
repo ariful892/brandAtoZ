@@ -30,6 +30,8 @@ const ShopHome = ({id}) => {
         </div>
     }
 
+    let x=Math.floor((Math.random()*37)+7)
+
     return (
         <div>
             <div className='md:px-[220px]'>
@@ -138,7 +140,7 @@ const ShopHome = ({id}) => {
                                     {/* <img className='h-[50px] w-[50px] rounded-full ml-[-6px] z-0' src='' alt="" /> */}
                                 </div>
                                 <div className=''>
-                                    <p className='text-slate-400 font-bold'>Brand A To Z like this</p>
+                                    <p className='text-slate-400 font-bold'>Brand A To Z <span className='px-[3px] text-slate-400'>{x}</span> like this</p>
                                 </div>
 
                                
