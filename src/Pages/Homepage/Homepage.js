@@ -8,8 +8,8 @@ import ShoppingMalls from './ShoppingMalls/ShoppingMalls';
 import TopSellers from './TopSellers/TopSellers';
 import display from '../../assets/display-picture.png';
 import display2 from '../../assets/display-picture2.png';
-import display3 from '../../assets/dis4.jpg';
-import display4 from '../../assets/dis6.jpg';
+import display3 from '../../assets/display-picture3.png';
+import display4 from '../../assets/display-picture4.png';
 import display5 from '../../assets/display-picture5.png';
 import logo1 from '../../assets/logo1.png';
 import logo2 from '../../assets/logo2.png';
@@ -196,7 +196,12 @@ const Homepage = ({ nav, setNav }) => {
                 </div>
 
 
+                <div className='mb-32 mx-3 lg:mx-5 lg:flex md:flex items-center'>
 
+                    <iframe className='w-full mr-8 p-2 bg-white rounded-md border-[1px] border-black' width="560" height="315" src="https://www.youtube.com/embed/gNRGkMeITVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" allowfullscreen ></iframe>
+
+                    <iframe className='w-full mt-10 md:mt-0 lg:mt-0 p-2 bg-white rounded-md border-[1px] border-black' width="560" height="315" src="https://www.youtube.com/embed/jDjvn_6qso8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
 
             </div>}
 
