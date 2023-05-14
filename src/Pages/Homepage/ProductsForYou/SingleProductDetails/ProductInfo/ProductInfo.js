@@ -45,7 +45,7 @@ const ProductInfo = () => {
     const loading = useSelector((state) => state.forYouProducts.loading);
     const img = useSelector((state) => state.forYouProducts.displayImage);
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
-    
+
     const [color, setColor] = useState("");
     const [size, setSize] = useState("");
     const [quantity, setQuantity] = useState(0);
@@ -532,7 +532,7 @@ const ProductInfo = () => {
 
                                 </div>
 
-                                <div className="price-btn-container mt-[8px]">
+                                <div className="price-btn-container">
                                     <p className="quantity ">Available Quantity: <span>{product.countInStock}</span></p>
                                     <h2 className="price">BDT <span>{product.price}</span></h2>
 

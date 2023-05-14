@@ -2,7 +2,7 @@
     /* margin-left: 130px;
     margin-right: 150px; */
     padding-bottom: 10px;
-   
+
 }
 
 .for-you-products {
@@ -10,7 +10,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     margin-top: 12px;
     width: 100%;
     background-color: #FFFFFF;
@@ -27,7 +27,7 @@
     .products-for-container {
         margin-top: -55px;
         /* width: 95%;
-        margin: auto; */    
+        margin: auto; */
 
     }
 

@@ -39,9 +39,6 @@
     margin-bottom: 32px;
 }
 
-.follow-block-btn-container {
-    display: flex;
-}
 
 .follow-btn {
     padding: 8px 24px;
@@ -272,10 +269,6 @@
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 16px;
-    }
-
-    .follow-block-btn-container {
-        /* margin-right: 50px; */
     }
 
     .follow-btn {
