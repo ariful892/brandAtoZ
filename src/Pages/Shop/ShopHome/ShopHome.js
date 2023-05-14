@@ -5,10 +5,13 @@ import { RiMessengerFill } from 'react-icons/ri';
 import { GiShoppingBag } from 'react-icons/gi';
 import { useSelector } from 'react-redux';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
+import brandAtoZ from '../../../assets/brand_A_To_z.jpg'
 import { RiInstagramFill } from 'react-icons/ri';
 import youtube from '../../../assets/icons/youtube-removebg-preview.png'
+import { NavLink, Outlet } from 'react-router-dom';
+import Shop from '../Shop';
 
-const ShopHome = () => {
+const ShopHome = ({id}) => {
 
     const state = useSelector((state) => state);
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
@@ -27,6 +30,8 @@ const ShopHome = () => {
         </div>
     }
 
+    let x=Math.floor((Math.random()*37)+7)
+
     return (
         <div>
             <div className='md:px-[220px]'>
@@ -43,21 +48,24 @@ const ShopHome = () => {
                                     </div>
                                     <div className=' text-[12px] w-[150px] md:w-max  md:text-xl md:font-bold'>
                                         <p className='text-white'>{s.seller.shopName}</p>
-                                        <div className='flex  justify-start items-center space-x-1 '>
-                                        {/* <svg className="w-6 h-6  text-yellow-400  ml-[-7px] mr-[-5px]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> */}
-                                        {/* <p className='text-slate-400 font-bold '>4.9</p> */}
-                                            {/* <p className='text-slate-400 font-bold'>(116)</p> */}
-                                        {/* <div className='text-white h-[20px] w-[20px] rounded-full flex justify-center items-center bg-[#40444b]'>
-                                                <p className='text-black'>i</p>
-                                            </div> */}
-                                        {/* <p className='text-slate-400 font-bold '>{s?.seller?.description}</p> */}
+                                        <div className='flex  justify-start items-center space-x-1 md:space-x-2 '>
+                                       
+                                 
 
-                                       <div className='flex flex-col  my-[20px]'>
+                                     <span class="fa fa-star text-yellow-400"></span>
+                                        <p className='text-slate-400 font-bold '>4.9</p>
+                                            <p className='text-slate-400 font-bold'>(116)</p>
+                                        <div className='text-white h-[20px] w-[20px] rounded-full flex justify-center items-center bg-[#40444b]'>
+                                                <p className='text-black'>i</p>
+                                            </div>
+                                        <p className='text-slate-400 font-bold '>{s?.seller?.description}</p>
+
+                                       {/* <div className='flex flex-col  my-[20px]'>
                                        <p className='text-white'>Shop Address: {s?.seller?.shopAddress}</p>
                                         <p className='text-white'>Seller Address: {s?.seller?.ownerAddress}</p>
                                         <p className='text-white'>Seller Email: {s?.email}</p>
                                         <p className='text-white'>Phone no: {s?.phnNo}</p>
-                                       </div>
+                                       </div> */}
 
                                         <div className='mt-[22px] flex justify-start items-center space-x-6'>
 
@@ -97,14 +105,14 @@ const ShopHome = () => {
 
 
                             </div>
-                            <p className='hidden md:block md:text-slate-400 '> Hi! Please let us know how we can help.</p>
+                            {/* <p className='hidden md:block md:text-slate-400 '> Hi! Please let us know how we can help.</p> */}
 
 
                             <div className='flex  justify-between  items-center my-[20px] md:hidden'>
                                 <div>
-                                    <div className=' flex justify-between items-center px-[40px] py-[8px] bg-blue-700 space-x-1 text-white rounded-[4px]'>
-                                        <GiShoppingBag className='' size={20} />
-                                        <p>View shop</p>
+                                    <div className=' flex justify-between items-center px-[30px] py-[8px] bg-blue-700 space-x-1 text-white rounded-[4px]'>
+                                        <GiShoppingBag style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} />
+                                        <p className='text-white'>View Products</p>
                                     </div>
                                 </div>
                                 <div className='px-[15px] py-[8px] bg-[#454545] flex justify-center items-center rounded-[4px]'>
@@ -122,34 +130,44 @@ const ShopHome = () => {
 
                                             </div></a>
 
-                                            <a href={s?.seller?.youtubeLink}><img className='h-[30px] w-[30px]' src={youtube} alt="" /></a>
+                                            <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
                             </div>
 
 
-                            <div className='flex justify-start items-center space-x-5 md:hidden'>
+                            <div className='border-b-2 border-slate-400 pt-[18px] pb-[25px] flex justify-start items-center space-x-5 md:hidden'>
                                 <div className='flex justify-start items-center'>
-                                    <img className='h-[50px] w-[50px] rounded-full z-10' src='' alt="" />
-                                    <img className='h-[50px] w-[50px] rounded-full ml-[-6px] z-0' src='' alt="" />
+                                    <img className='h-[50px] w-[50px] rounded-full' src={brandAtoZ} alt="" />
+                                    {/* <img className='h-[50px] w-[50px] rounded-full ml-[-6px] z-0' src='' alt="" /> */}
                                 </div>
-                                <div>
-                                    <p className='text-slate-400 font-bold'>Mahmud,Riana and 50880 others like this</p>
+                                <div className=''>
+                                    <p className='text-slate-400 font-bold'>Brand A To Z <span className='px-[3px] text-slate-400'>{x}</span> like this</p>
                                 </div>
+
+                               
                             </div>
+
+                           
+
+                            
 
 
 
                         </div>
 
 
-                        <div className='hidden md:flex justify-between items-center md:px-[10px] md:mt-[15px]' >
+                        <div className='hidden md:flex justify-between items-center md:px-[10px]  md:mt-[15px]' >
                             <div className='flex justify-start items-center space-x-1   md:space-x-5  font-semibold'>
-                                <p className='text-white'>Home</p>
-                                <p  className='text-white'>About</p>
-                                <p  className='text-white'>Photos</p>
-                                <p  className='text-white'>Groups</p>
+                         
+                                  
+                                 <Shop></Shop>
                                 <div className='flex justify-center items-center space-x-1'>
-                                    <p  className='text-white'>More</p>
-                                    <AiFillCaretDown size={13} />
+
+                                   {/* <NavLink to={`/about/${id}`} className={({ isActive }) =>
+                            isActive ? 'border-b-2 border-red-600' : undefined
+                        }>
+                                  <p className='text-white'>About</p>
+                        </NavLink> */}
+                                    {/* <AiFillCaretDown size={13} /> */}
                                 </div>
                             </div>
                             <div className='flex justify-center items-center space-x-2'>
@@ -173,14 +191,17 @@ const ShopHome = () => {
                                             <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
                             </div>
                         </div>
+                        
+                       
 
-                        <div className='flex justify-between items-center px-[15px] mt-[15px]  font-bold md:hidden'>
-                            <p className='text-white'>Home</p>
-                            <p className='text-white'>About</p>
-                            <p className='text-white'>Posts</p>
-                            <p className='text-white'>Reviews</p>
-                            <p className='text-white'>Videos</p>
-                            <p className='text-white'>Photos</p>
+                        <div className='flex justify-between items-center px-[15px] mt-[12px]  font-bold md:hidden'>
+                       <Shop></Shop>
+                            {/* <NavLink to={`/about/${id}`} className={({ isActive }) =>
+                            isActive ? 'border-b-2 border-red-600' : undefined
+                        }>
+                                  <p className='text-white'>About</p>
+                        </NavLink> */}
+                      
                         </div>
 
                     </>)
@@ -189,6 +210,8 @@ const ShopHome = () => {
 
 
             </div>
+
+            <Outlet />
 
         </div>
     );

@@ -18,7 +18,7 @@ const Seller = () => {
     }, [dispatch, id])
     return (
         <div className='bg-black h-max '>
-            <ShopHome></ShopHome>
+            <ShopHome id={id}></ShopHome>
             <Products></Products>
             <hr className='' />
         </div>
