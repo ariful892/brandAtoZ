@@ -56,7 +56,18 @@
 /* Mobile device */
 @media screen and (max-width:692px) {
     .footer-container {
+        padding: 36px 64px;
+        padding-bottom: 30px;
+        gap: 25px;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-items-title {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 36px;
+        color: #FFFFFF;
+        margin-bottom: 10px;
     }
 }
 

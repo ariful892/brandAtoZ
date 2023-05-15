@@ -110,12 +110,12 @@ const ShopHome = ({id}) => {
 
                             <div className='flex  justify-between  items-center my-[20px] md:hidden'>
                                 <div>
-                                    <div className=' flex justify-between items-center px-[30px] py-[8px] bg-blue-700 space-x-1 text-white rounded-[4px]'>
+                                    <div className=' flex justify-between items-center px-[45px] py-[8px] bg-blue-700 space-x-1 text-white rounded-[4px]'>
                                         <GiShoppingBag style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} />
                                         <p className='text-white'>View Products</p>
                                     </div>
                                 </div>
-                                <div className='px-[15px] py-[8px] bg-[#454545] flex justify-center items-center rounded-[4px]'>
+                                <div className='px-[23px] py-[8px] bg-[#454545] flex justify-center items-center rounded-[4px]'>
                                     <RiMessengerFill style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} />
                                 </div>
                                 {/* <div className='px-[20px] py-[8px] bg-[#454545] text-white flex justify-center items-center rounded-[4px]'> */}
@@ -134,7 +134,7 @@ const ShopHome = ({id}) => {
                             </div>
 
 
-                            <div className='border-b-2 border-slate-400 pt-[18px] pb-[25px] flex justify-start items-center space-x-5 md:hidden'>
+                            <div className='border-b-2 border-slate-400 pt-[18px] pb-[17px] flex justify-start items-center space-x-5 md:hidden'>
                                 <div className='flex justify-start items-center'>
                                     <img className='h-[50px] w-[50px] rounded-full' src={brandAtoZ} alt="" />
                                     {/* <img className='h-[50px] w-[50px] rounded-full ml-[-6px] z-0' src='' alt="" /> */}

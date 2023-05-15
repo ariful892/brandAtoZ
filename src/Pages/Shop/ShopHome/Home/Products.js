@@ -13,9 +13,9 @@ const Products = () => {
                     state?.map((s) => <>
                         <div class="flex justify-center">
                             {<Link to={`/details/${s._id}`}>
-                                <div class="rounded-lg shadow-lg bg-[#F4F8F9] md:w-[196px] w-[160px]">
+                                <div class="rounded-lg shadow-lg bg-[#F4F8F9] md:w-[196px] w-[178px]">
                                     <a href="#!">
-                                        <img class="rounded-t-lg h-[180px] object-cover w-[160px] md:h-[320px] md:w-[370px]  hover:opacity-70" src={`https://brandatoz.com${s?.image.split(",")[0]}`} alt="" />
+                                        <img class="rounded-t-lg h-[180px] object-cover w-[178px] md:h-[320px] md:w-[370px]  hover:opacity-70" src={`https://brandatoz.com${s?.image.split(",")[0]}`} alt="" />
                                     </a>
                                   
 

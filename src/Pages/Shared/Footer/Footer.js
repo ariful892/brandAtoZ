@@ -17,12 +17,12 @@ const Footer = () => {
 
 
                 <div tabindex="0" class="collapse collapse-plus border border-base-300  rounded-box">
-                    <div class="collapse-title text-xl font-medium text-white">
+                    <div class="collapse-title text-[12px] md:text-xl font-medium text-white">
                         Menu
                     </div>
                     <div class="collapse-content ">
-                        <div className='flex flex-col'>
-                            <a className="text-white">Privacy policy</a>
+                        <div className='flex flex-col text-[12px] md:text-xl '>
+                            <a className="text-white ">Privacy policy</a>
                             <a className="text-white">Purchasing and delivery policy</a>
                             <a className="text-white">Terms and condition</a>
                             <a className="text-white">Career</a>
@@ -42,11 +42,11 @@ const Footer = () => {
                 <a className="footer-items">FAQ</a> */}
 
                 <div tabindex="0" class="collapse collapse-plus border border-base-300  rounded-box">
-                    <div class="collapse-title text-xl font-medium text-white">
+                    <div class="collapse-title text-[12px] md:text-xl font-medium text-white">
                         Customer Care
                     </div>
                     <div class="collapse-content ">
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col text-[12px] md:text-xl'>
                             <a className="text-white">Help center</a>
                             <a className="text-white">How to buy</a>
                             <a className="text-white">Return & Refund</a>
@@ -64,11 +64,11 @@ const Footer = () => {
 
 
                 <div tabindex="0" class="collapse collapse-plus border border-base-300  rounded-box">
-                    <div class="collapse-title text-xl font-medium text-white">
+                    <div class="collapse-title text-[12px] md:text-xl font-medium text-white">
                         Contact Us
                     </div>
                     <div class="collapse-content ">
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col text-[12px] md:text-xl'>
                             <a className="text-white">255 West Bashundhara RA, Dhaka</a>
                             <a className="text-white">+88 01987654321</a>
                             <a className="text-white">dokanvai@gmail.com</a>
@@ -95,11 +95,11 @@ const Footer = () => {
 
 
                 <div tabindex="0" class="collapse collapse-plus border border-base-300  rounded-box">
-                    <div class="collapse-title text-xl font-medium text-white">
+                    <div class="collapse-title text-[12px] md:text-xl font-medium text-white">
                         Give us Feedback
                     </div>
                     <div class="collapse-content ">
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col text-[12px] md:text-xl'>
                             <a className="text-white footer-items-title follow-us">Follow US</a>
                            <div className='social-link'>
                            <a className=""><img src={facebook} alt="" /></a>
@@ -113,7 +113,9 @@ const Footer = () => {
                 </div>
 
 
-
+               <div className='flex md:justify-end justify-center items-center mt-[30px]'>
+                <h1 className='text-white'>©2023 All Rights Reserved by Brand A To Z</h1>
+               </div>
 
 
             </div>
