@@ -113,7 +113,7 @@ const ShoppingMall = () => {
                     <h2 className='mall-name'>{mallName}</h2>
                     <p className='mall-address'>KA-244, Kuril, Progoti Shoroni, Dhaka</p>
 
-                    <div className='follow-block-btn-container'>
+                    <div className='flex'>
                         <button className='follow-btn'>Follow</button>
                         <button className='block-btn'>Block</button>
                     </div>

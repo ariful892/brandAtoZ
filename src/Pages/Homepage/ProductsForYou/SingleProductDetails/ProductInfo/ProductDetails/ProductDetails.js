@@ -42,7 +42,7 @@ const ProductDetails = ({ product }) => {
                     <h2>Cash on delivery</h2>
                 </div>
             </div>
-            <p className='product-description'>{product.description}</p>
+            <pre className='description'>{product.description}</pre>
         </div>
     );
 };
