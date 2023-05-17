@@ -33,13 +33,37 @@ import Photos from './Pages/Shop/ShopHome/Photos/Photos';
 import Videos from './Pages/Shop/ShopHome/Videos/Videos';
 import Live from './Pages/Shop/ShopHome/Live/Live';
 import Reviews from './Pages/Shop/ShopHome/Reviews/Reviews';
-
+import React, { useEffect } from 'react';
+import { init } from 'react-facebook-pixel';
+import { track } from 'react-facebook-pixel';
+import ReactPixel from 'react-facebook-pixel';
 
 
 function App() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [nav, setNav] = useState(false)
+   const FB_PIXEL_ID = '551260690531020';
+  const options = {
+    autoConfig: true, // Auto-configure Pixel
+    debug: false, // Enable debugging mode
+  };
+  
+  ReactPixel.init(FB_PIXEL_ID, options);
+
+useEffect(() => {
+  ReactPixel.pageView();
+ 
+}, []);
+
+
+
+
+// ...
+
+// useEffect(() => {
+//   track('PageView');
+// }, []);
 
   return (
     <div>
