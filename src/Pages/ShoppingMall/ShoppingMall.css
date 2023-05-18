@@ -151,22 +151,21 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 8px;
+    /* margin-left: 8px; */
 }
 
 .ratings {
     width: 13px;
     height: 12px;
-    margin-right: 6px;
 }
 
 .rating-extra {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.02em;
     color: #5C738A;
-    margin-left: 8px;
+    margin-left: 6px;
 }
 
 .shops-container {
