@@ -87,7 +87,7 @@
 .filter-container {
     padding: 0px;
     gap: 24px;
-    min-width: 196px;
+    min-width: 140px;
     border-radius: 8px;
 }
 
@@ -175,9 +175,9 @@
 }
 
 .shops {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
+    gap: 4px; */
     margin-top: 32px;
     margin-bottom: 32px;
 }
@@ -196,7 +196,8 @@
 }
 
 .shop-image {
-    width: 180px;
+    /* width: 180px; */
+    width: 100%;
     height: 180px;
     border-radius: 8px;
     margin-bottom: 16px;
@@ -250,8 +251,8 @@
 @media screen and (max-width:692px) {
     .shopping-container {
         width: 100%;
-        padding-left: 2.5%;
-        padding-right: 2.5%;
+        padding-left: 2%;
+        padding-right: 2%;
         padding-top: 10px;
         padding-bottom: 20px;
     }
@@ -354,7 +355,7 @@
     }
 
     .shops {
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
         /* column-gap: 12px;
         row-gap: 20px; */
     }
@@ -370,7 +371,7 @@
     }
 
     .shop-image {
-        width: 164px;
+        /* width: 164px; */
         height: 164px;
 
 
@@ -386,7 +387,7 @@
 
     .shopping-container {
         width: 100%;
-        padding-left: 5%;
+        padding-left: 2.5%;
         padding-right: 5%;
 
 
@@ -428,6 +429,13 @@
     }
 
     .shops {
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
+    }
+
+    .shop-image {
+        /* width: 164px; */
+        height: 190px;
+
+
     }
 }

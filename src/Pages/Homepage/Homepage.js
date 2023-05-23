@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Featured from './Featured/Featured';
 import FlashSale from './FlashSale/FlashSale';
 import HelloMall from './HelloMall/HelloMall';
@@ -22,6 +22,8 @@ import picabo6 from '../../assets/Piacabo_icons/Shopping malls.png'
 import picabo7 from '../../assets/Piacabo_icons/pay after checking product.png'
 import picabo8 from '../../assets/Piacabo_icons/product Inspection.png'
 import picabo9 from '../../assets/Piacabo_icons/quality guaranteed.png'
+import star from '../../assets/icons/Star.png';
+import starLight from '../../assets/icons/starlight.png';
 
 import feedback from '../../assets/feedback.png';
 import seller from '../../assets/seller.jpg';
@@ -35,14 +37,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper';
+import { useDispatch, useSelector } from 'react-redux';
+import loadShopData from '../../redux/thunk/products/fetchShopData';
 
 const Homepage = ({ nav, setNav }) => {
 
-    // const breakPoints = [
-    //     { width: 1, itemsToShow: 1 },
-    //     { width: 768, itemsToShow: 1 },
-    //     { width: 1200, itemsToShow: 1 },
-    // ];
+    const dispatch = useDispatch();
+    const allSellers = useSelector((state) => state.shoppingmall.filteredShops);
+
+    // console.log(allSellers)
+
+    useEffect(() => {
+        dispatch(loadShopData('Aysha Shopping Complex'))
+    }, [dispatch])
 
 
     return (
@@ -195,6 +202,118 @@ const Homepage = ({ nav, setNav }) => {
                 <ShoppingMalls></ShoppingMalls>
 
                 {/* <Featured></Featured> */}
+
+                <div className='mx-3 lg:mx-5 mb-28'>
+
+                    <h2 className='text-3xl'>Top Rated Shops</h2>
+
+
+
+                    <div className='px-3 lg:px-5 py-5  mt-8 mb-8 bg-white shadow-lg rounded-lg'>
+                        <div className='flex justify-between'>
+                            <h2 className='text-xl font-bold mb-4'>Cosmetics</h2>
+                            <button className='px-2 h-7 text-sm border-[1px] border-black rounded-lg'>Show more</button>
+                        </div>
+                        <div className="">
+                            <Swiper
+                                slidesPerView={4}
+                                spaceBetween={30}
+                                freeMode={true}
+
+                                modules={[FreeMode]}
+                                className="mySwiper"
+                            >
+                                {
+                                    allSellers.map(shop => <SwiperSlide>
+                                        <div className='ml-0 lg:ml-12 md:ml-8'>
+                                            <img className='w-24 h-16 lg:h-24 md:h-24 mb-2.5' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
+                                            <p className='text-xs lg:text-sm'>{shop.seller.shopName}</p>
+                                            <div className="flex gap-0.5 mt-2">
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={starLight} alt="" />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>)
+                                }
+
+
+                            </Swiper>
+                        </div>
+                    </div>
+
+                    <div className='px-3 lg:px-5 py-5  mt-8 mb-8 bg-white shadow-lg rounded-lg'>
+                        <div className='flex justify-between'>
+                            <h2 className='text-xl font-bold mb-4'>Electronics</h2>
+                            <button className='px-2 h-7 text-sm border-[1px] border-black rounded-lg'>Show more</button>
+                        </div>
+                        <div className="">
+                            <Swiper
+                                slidesPerView={4}
+                                spaceBetween={30}
+                                freeMode={true}
+
+                                modules={[FreeMode]}
+                                className="mySwiper"
+                            >
+                                {
+                                    allSellers.map(shop => <SwiperSlide>
+                                        <div className='ml-0 lg:ml-12 md:ml-8'>
+                                            <img className='w-24 h-16 lg:h-24 md:h-24 mb-2.5' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
+                                            <p className='text-xs lg:text-sm'>{shop.seller.shopName}</p>
+                                            <div className="flex gap-0.5 mt-2">
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={starLight} alt="" />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>)
+                                }
+
+
+                            </Swiper>
+                        </div>
+                    </div>
+
+                    <div className='px-3 lg:px-5 py-5  mt-8  bg-white shadow-lg rounded-lg'>
+                        <div className='flex justify-between'>
+                            <h2 className='text-xl font-bold mb-4'>Men's Fashion</h2>
+                            <button className='px-2 h-7 text-sm border-[1px] border-black rounded-lg'>Show more</button>
+                        </div>
+                        <div className="">
+                            <Swiper
+                                slidesPerView={4}
+                                spaceBetween={30}
+                                freeMode={true}
+
+                                modules={[FreeMode]}
+                                className="mySwiper"
+                            >
+                                {
+                                    allSellers.map(shop => <SwiperSlide>
+                                        <div className='ml-0 lg:ml-12 md:ml-8'>
+                                            <img className='w-24 h-16 lg:h-24 md:h-24 mb-2.5' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
+                                            <p className='text-xs lg:text-sm'>{shop.seller.shopName}</p>
+                                            <div className="flex gap-0.5 mt-2">
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={star} alt="" />
+                                                <img className='w-2.5' src={starLight} alt="" />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>)
+                                }
+
+
+                            </Swiper>
+                        </div>
+                    </div>
+                </div>
 
                 <ProductsForYou></ProductsForYou>
 

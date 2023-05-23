@@ -33,7 +33,7 @@ const ShoppingMall = () => {
     const dispatch = useDispatch();
     const allSellers = useSelector((state) => state.shoppingmall.filteredShops);
 
-    // console.log(allSellers)
+    // console.log(mallName)
     // const { isLoading, error, data: allSellers, refetch } = useQuery('sellers', () =>
     //     fetch('https://backend.dokanbhai.dokanbhai.com:3002/api/users/all-sellers').then(res =>
     //         res.json()
@@ -64,7 +64,7 @@ const ShoppingMall = () => {
 
 
     // }
-    console.log(floorNo);
+    // console.log(floorNo);
     let shopContent;
 
     // if (allSellers && !floorNo) {
@@ -293,28 +293,49 @@ const ShoppingMall = () => {
                         <img className='search-btn' src={searchIcon} alt="" />
                     </div>
 
-                    <div className='w-full flex justify-center'>
-                        <div className="shops">
-                            {
-                                allSellers.map(shop =>
-                                    <Link
-                                        to={`/shop/home/${shop._id}`}
-                                        // onClick={() => shopClick(shop._id)}
-                                        className="shop"
-                                        key={shop._id}
-                                    >
-                                        <img className='shop-image' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
-                                        <div className="shop-details">
-                                            <h2 className='shop-title'>{shop.seller.shopName}</h2>
-                                            <p className='type'>{shop.seller.description}</p>
-                                            <div className=' shop-floor'>
-                                                <img className='floor-icon' src={floorIcon} alt="" />
-                                                <span className='floor-no'>Floor no <span>{shop.seller.floorNo}</span></span>
-                                            </div>
-                                        </div>
-                                    </Link>)
 
-                            }
+                    <div className='flex justify-center'>
+
+
+
+                        <div className='img-container'>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className='w-full flex justify-center'>
+
+                        <div className="shops">
+                            <div className="all-products">
+                                {
+                                    allSellers.map(shop =>
+                                        <Link
+                                            to={`/shop/home/${shop._id}`}
+                                            // onClick={() => shopClick(shop._id)}
+                                            // className="shop"
+                                            className="single-product"
+                                            key={shop._id}
+                                        >
+                                            <img className='shop-image' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
+                                            {/* <img className='product-img' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" /> */}
+                                            {/* <div className="shop-details"> */}
+                                            <div className="product-details">
+                                                {/* <h2 className='shop-title'>{shop.seller.shopName}</h2> */}
+                                                <h2 className='product-name'>{shop.seller.shopName}</h2>
+                                                {/* <p className='type'>{shop.seller.description}</p> */}
+                                                <p className='product-type'>{shop.seller.description}</p>
+                                                <div className=' shop-floor'>
+                                                    <img className='floor-icon' src={floorIcon} alt="" />
+                                                    <span className='floor-no'>Floor no <span>{shop.seller.floorNo}</span></span>
+                                                </div>
+                                            </div>
+                                        </Link>)
+
+                                }
+                            </div>
                         </div>
                     </div>
 

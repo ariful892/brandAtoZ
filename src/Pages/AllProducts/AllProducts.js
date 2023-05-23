@@ -60,7 +60,7 @@ const AllProducts = () => {
     const handleFilteredProduct = (category) => {
 
         // dispatch(filterShop(floor))
-        console.log(category)
+        // console.log(category)
         dispatch(loadsideNavCategoryProductData(category, loading, setLoading))
 
         // const productCategory = {
