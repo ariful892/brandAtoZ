@@ -146,25 +146,25 @@ const ShoppingMall = () => {
 
                             {floor && <div>
                                 <div
-                                    className='flex items-center mb-3'>
+                                    className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('all')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>All</span>
                                 </div>
                                 <div
-                                    className='flex items-center mb-3'>
+                                    className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('0')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>1st</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('1')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>2nd</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('2')
                                     } className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>3rd</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('3')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>4th</span>
                                 </div>
@@ -187,19 +187,19 @@ const ShoppingMall = () => {
                             </div>
 
                             {type && <div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Mobile</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Sports</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Accessories</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Dress</span>
                                 </div>
@@ -242,7 +242,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={star} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
 
                                 <div className='flex items-center mb-3'>
@@ -254,7 +254,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
 
                                 <div className='flex items-center mb-3'>
@@ -267,7 +267,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
                                 <div className='flex items-center'>
                                     <input className='checkbox-icon' type="radio" name="" id="" />
@@ -279,7 +279,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
                             </div>}
 
@@ -294,19 +294,7 @@ const ShoppingMall = () => {
                     </div>
 
 
-                    <div className='flex justify-center'>
-
-
-
-                        <div className='img-container'>
-
-                        </div>
-
-
-
-                    </div>
-
-                    <div className='w-full flex justify-center'>
+                    <div className='w-full '>
 
                         <div className="shops">
                             <div className="all-products">
@@ -339,11 +327,11 @@ const ShoppingMall = () => {
                         </div>
                     </div>
 
-                    {allSellers.length > 1 &&
+                    {/* {allSellers.length > 1 &&
                         <div className='text-center'>
                             <button className='load-btn'>Load More</button>
                         </div>
-                    }
+                    } */}
                 </div>
             </div>
         </div>

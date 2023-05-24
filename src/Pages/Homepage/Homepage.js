@@ -79,7 +79,7 @@ const Homepage = ({ nav, setNav }) => {
 
                                     <div className='ml-5'>
                                         <h2 className='text-2xl lg:text-3xl font-bold mt-4'>Clearance up to 50% off</h2>
-                                        <p className='mt-3 mb-8 text-black'>Huge savings on tech, toys, home & more!</p>
+                                        <p className='mt-3 mb-5 text-black'>Huge savings on tech, toys, home & more!</p>
                                         <button className='px-4 py-1 border-2 border-black text-black font-extrabold rounded-3xl hover:bg-black hover:text-white'>Shop Now</button>
                                     </div>
                                 </div>

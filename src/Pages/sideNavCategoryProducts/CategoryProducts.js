@@ -97,7 +97,7 @@ const CategoryProducts = () => {
     }
 
     if (!products?.length) {
-        content = <h2 className='text-2xl text-center mb-8 min-h-screen'>No item found!</h2>
+        content = <h2 className='text-2xl text-center mb-8 min-h-screen text-red-500'>No item found!</h2>
     }
 
     const handleClick = async (data) => {
@@ -122,7 +122,7 @@ const CategoryProducts = () => {
 
 
 
-            {products?.length && <div className='mt-[100px]'>
+            {products?.length && <div className='mt-[24px]'>
 
 
 
