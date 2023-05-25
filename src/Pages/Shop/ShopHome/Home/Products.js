@@ -36,7 +36,7 @@ const Products = () => {
 
 
                             <div className='flex justify-start items-center space-x-4'>
-                                <h2 className='text-red-600  font-extrabold text-[20px] '>৳  {s.price}  </h2>
+                                {/* <h2 className='text-red-600  font-extrabold text-[20px] '>৳  {s.price}  </h2> */}
                                 {s.discounted_price && <del className='text-slate-400'>৳{s.discounted_price}</del>}
 
                             </div>
