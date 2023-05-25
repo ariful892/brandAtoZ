@@ -294,10 +294,10 @@ const ShoppingMall = () => {
                     </div>
 
 
-                    <div className='w-full '>
+                    <div className='w-full min-h-screen'>
 
                         <div className="shops">
-                            <div className="all-products">
+                            <div className="all-products ">
                                 {
                                     allSellers.map(shop =>
                                         <Link

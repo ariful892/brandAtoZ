@@ -64,12 +64,12 @@
     /* padding: 8px; */
     background: #FFFFFF;
     /* background-color: black; */
-    border: 1px solid black;
-    border-radius: 8px;
+    /* border: 1px solid black; */
+    /* border-radius: 8px; */
 }
 
 .shop-container:hover {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .shop-img-container {
@@ -83,7 +83,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .edit-container {

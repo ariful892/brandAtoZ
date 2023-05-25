@@ -87,7 +87,8 @@
 .filter-container {
     padding: 0px;
     gap: 24px;
-    min-width: 140px;
+    min-width: 150px;
+    /* width: fit-content; */
     border-radius: 8px;
 }
 
@@ -202,7 +203,7 @@
     height: 200px;
     border-radius: 8px;
     margin-bottom: 16px;
-
+    object-fit: cover;
 }
 
 .shop-details {
@@ -420,13 +421,59 @@
         margin-top: 20px;
     }
 
-    .filter-container {
-        /* width: 25%; */
+    /* .filter-container {
+      
         border-radius: 8px;
+    } */
+
+    .filter-shops-container {
+        margin-top: 120px;
+        display: flex;
+        position: relative;
     }
 
+    .filter-container {
+        min-width: 30%;
+        position: absolute;
+        left: 0;
+        top: -60px;
+        z-index: 1;
+    }
+
+    .filter-title-container-mobile {
+        display: block;
+    }
+
+    .home-filter {
+
+        display: none;
+    }
+
+    .mobile-home-filter {
+        background: white;
+        padding: 8px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        /* display: block; */
+    }
+
+
+    .filter-title-mobile {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        color: #4C5967;
+        /* margin-bottom: 24px; */
+    }
+
+    .filter-title {
+        display: none;
+        margin-bottom: 0;
+    }
+
+
     .shops-container {
-        margin-left: 24px;
+        margin-left: 0px;
 
     }
 
@@ -436,7 +483,7 @@
 
     .shop-image {
         /* width: 164px; */
-        height: 220px;
+        height: 260px;
 
 
     }

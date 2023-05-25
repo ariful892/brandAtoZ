@@ -153,7 +153,7 @@ const Nav = ({ nav, setNav, modalOpen, setModalOpen }) => {
                         </div>
 
                         <Link to='/'><div className='flex flex-col justify-between items-center'>
-                            <img className='h-[65px] w-[60px]  md:h-[100px] md:w-[150px]' src={brandA_To_Z} alt="" />
+                            <img className='h-[65px] w-[60px]  md:h-[100px] md:w-[150px] object-cover' src={brandA_To_Z} alt="" />
                             {/* <p className='text-[10px]  md:text-[14px]'>Easy Shopping</p> */}
                         </div></Link>
 
