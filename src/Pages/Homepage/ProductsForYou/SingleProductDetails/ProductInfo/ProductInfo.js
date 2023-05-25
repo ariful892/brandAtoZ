@@ -52,7 +52,7 @@ const ProductInfo = () => {
     // const [cartProduct, setCartProduct] = useState([]);
 
     // console.log(loading)
-    console.log(product)
+    // console.log(product)
     // console.log(size)
     // console.log(quantity)
 
@@ -217,7 +217,7 @@ const ProductInfo = () => {
         else {
             mainPrice = product.price;
         }
-        console.log(mainPrice)
+        // console.log(mainPrice)
 
         const cart = {
             product: id,
@@ -248,7 +248,7 @@ const ProductInfo = () => {
             }
             else {
                 newCart = [...cartProduct, cart];
-                console.log(newCart.length)
+                // console.log(newCart.length)
                 loadCartProducts(newCart);
                 addToDb(newCart);
                 // setCartProduct(newCart);

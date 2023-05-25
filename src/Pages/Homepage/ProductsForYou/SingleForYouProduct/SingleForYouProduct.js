@@ -35,17 +35,9 @@ const SingleForYouProduct = ({ product, setOpenModal, openModal }) => {
     }
 
 
-
-
-
-
-
     return (
 
         <div className=' ' >
-
-
-
 
             <div className="single-product relative  " >
                 {(openModal && po?.length) ? <div className='absolute right-40 md:top-0  md:right-40'>
@@ -55,12 +47,6 @@ const SingleForYouProduct = ({ product, setOpenModal, openModal }) => {
                 <div onMouseMoveCapture={() => setState(!state)} className='img-container '>
                     <img className='product-img' src={`https://brandatoz.com${productImg[0]}`} alt="" />
                 </div>
-
-
-
-
-
-
 
                 {/* <div className={!state?'absolute top-36 right-3 ':'hidden'}>
            <div className='h-[30px] w-[30px] flex justify-center items-center bg-white rounded-full'>
@@ -78,13 +64,6 @@ const SingleForYouProduct = ({ product, setOpenModal, openModal }) => {
           
             </div> */}
 
-
-
-
-
-
-
-
                 <div className="product-details">
                     <b><p className='product-name font-extrabold text-black'>{product.name}</p></b>
                     {/* <p className='product-type'>Sit eu</p> */}
@@ -94,11 +73,6 @@ const SingleForYouProduct = ({ product, setOpenModal, openModal }) => {
                         <p>0<span className='pl-[2px]'>(No Reviews)</span></p>
 
                     </div>
-
-
-
-
-
 
                     <div className='flex justify-start items-center space-x-4'>
                         <h2 className='text-red-600  font-extrabold text-[20px] '>৳  {product.price}  </h2>

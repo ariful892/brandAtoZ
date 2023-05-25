@@ -33,7 +33,7 @@ const ShoppingMall = () => {
     const dispatch = useDispatch();
     const allSellers = useSelector((state) => state.shoppingmall.filteredShops);
 
-    // console.log(allSellers)
+    // console.log(mallName)
     // const { isLoading, error, data: allSellers, refetch } = useQuery('sellers', () =>
     //     fetch('https://backend.dokanbhai.dokanbhai.com:3002/api/users/all-sellers').then(res =>
     //         res.json()
@@ -64,7 +64,7 @@ const ShoppingMall = () => {
 
 
     // }
-    console.log(floorNo);
+    // console.log(floorNo);
     let shopContent;
 
     // if (allSellers && !floorNo) {
@@ -146,25 +146,25 @@ const ShoppingMall = () => {
 
                             {floor && <div>
                                 <div
-                                    className='flex items-center mb-3'>
+                                    className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('all')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>All</span>
                                 </div>
                                 <div
-                                    className='flex items-center mb-3'>
+                                    className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('0')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>1st</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('1')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>2nd</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('2')
                                     } className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>3rd</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input onClick={() => handleFloorFilter('3')} className='checkbox-icon' type="radio" name="floor" id="" />
                                     <span className='filter-value'>4th</span>
                                 </div>
@@ -187,19 +187,19 @@ const ShoppingMall = () => {
                             </div>
 
                             {type && <div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Mobile</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Sports</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Accessories</span>
                                 </div>
-                                <div className='flex items-center mb-3'>
+                                <div className='flex items-center mb-2'>
                                     <input className='checkbox-icon' type="checkbox" name="" id="" />
                                     <span className='filter-value'>Dress</span>
                                 </div>
@@ -242,7 +242,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={star} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
 
                                 <div className='flex items-center mb-3'>
@@ -254,7 +254,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
 
                                 <div className='flex items-center mb-3'>
@@ -267,7 +267,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
                                 <div className='flex items-center'>
                                     <input className='checkbox-icon' type="radio" name="" id="" />
@@ -279,7 +279,7 @@ const ShoppingMall = () => {
                                         <img className='ratings' src={starLight} alt="" />
                                         <img className='ratings' src={starLight} alt="" />
                                     </div>
-                                    <span className='rating-extra'>and up</span>
+                                    <span className='rating-extra'>& up</span>
                                 </div>
                             </div>}
 
@@ -293,36 +293,45 @@ const ShoppingMall = () => {
                         <img className='search-btn' src={searchIcon} alt="" />
                     </div>
 
-                    <div className='w-full flex justify-center'>
-                        <div className="shops">
-                            {
-                                allSellers.map(shop =>
-                                    <Link
-                                        to={`/shop/home/${shop._id}`}
-                                        // onClick={() => shopClick(shop._id)}
-                                        className="shop"
-                                        key={shop._id}
-                                    >
-                                        <img className='shop-image' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
-                                        <div className="shop-details">
-                                            <h2 className='shop-title'>{shop.seller.shopName}</h2>
-                                            <p className='type'>{shop.seller.description}</p>
-                                            <div className=' shop-floor'>
-                                                <img className='floor-icon' src={floorIcon} alt="" />
-                                                <span className='floor-no'>Floor no <span>{shop.seller.floorNo}</span></span>
-                                            </div>
-                                        </div>
-                                    </Link>)
 
-                            }
+                    <div className='w-full min-h-screen'>
+
+                        <div className="shops">
+                            <div className="all-products ">
+                                {
+                                    allSellers.map(shop =>
+                                        <Link
+                                            to={`/shop/home/${shop._id}`}
+                                            // onClick={() => shopClick(shop._id)}
+                                            // className="shop"
+                                            className="single-product"
+                                            key={shop._id}
+                                        >
+                                            <img className='shop-image' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" />
+                                            {/* <img className='product-img' src={`https://brandatoz.com${shop.seller.logo.split(",")[0]}`} alt="" /> */}
+                                            {/* <div className="shop-details"> */}
+                                            <div className="product-details">
+                                                {/* <h2 className='shop-title'>{shop.seller.shopName}</h2> */}
+                                                <h2 className='product-name'>{shop.seller.shopName}</h2>
+                                                {/* <p className='type'>{shop.seller.description}</p> */}
+                                                <p className='product-type'>{shop.seller.description}</p>
+                                                <div className=' shop-floor'>
+                                                    <img className='floor-icon' src={floorIcon} alt="" />
+                                                    <span className='floor-no'>Floor no <span>{shop.seller.floorNo}</span></span>
+                                                </div>
+                                            </div>
+                                        </Link>)
+
+                                }
+                            </div>
                         </div>
                     </div>
 
-                    {allSellers.length > 1 &&
+                    {/* {allSellers.length > 1 &&
                         <div className='text-center'>
                             <button className='load-btn'>Load More</button>
                         </div>
-                    }
+                    } */}
                 </div>
             </div>
         </div>

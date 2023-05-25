@@ -65,17 +65,18 @@
     /* width: 204px; */
     width: 100%;
     height: auto;
+    object-fit: cover;
     /* margin: auto; */
 }
 
-.product-img:hover{
+.product-img:hover {
     opacity: 0.6;
-   
+
 }
 
 .product-details {
     margin-left: 16px;
-    
+
 }
 
 .product-name {

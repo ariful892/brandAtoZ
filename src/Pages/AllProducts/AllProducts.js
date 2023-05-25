@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import loadsProductsPagination, { loadAllProductsPagination } from '../../redux/actionCreators/productsWithPaginationAction';
+import loadsProductsPagination, { loadAllProductsPagination, loadFilteredProduct } from '../../redux/actionCreators/productsWithPaginationAction';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../Shared/Loading/Loading';
 import ReactPaginate from 'react-paginate';
@@ -10,12 +10,20 @@ import { useQuery } from 'react-query';
 import star from '../../assets/icons/Star.png';
 import starLight from '../../assets/icons/starlight.png';
 import './AllProducts.css'
+import loadsideNavCategoryProductData from '../../redux/actionCreators/fetchSideNavCategoryProducts';
 
 const AllProducts = () => {
 
     const dispatch = useDispatch()
     const { loading1, paginated_products } = useSelector((state) => state?.pagination);
+    const { filtered_products } = useSelector((state) => state?.pagination);
     const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const [category, setCategory] = useState('');
+    // const products = useSelector((state) => state?.sideNavCategoryProducts?.products[0]?.products)
+
+    // console.log('filtered_products')
+    // console.log(filtered_products)
 
 
     useEffect(() => {
@@ -24,12 +32,8 @@ const AllProducts = () => {
 
     }, [])
 
-    const { isLoading, data: allProducts, refetch } = useQuery('details', () =>
-        fetch(`https://backend.dokanbhai.dokanbhai.com:3002/api/products?pageNumber=1&seller=&name=&category=&min=0&max=0&rating=0&order=newest&flash_sale=`)
-            .then(res => res.json())
-    )
 
-    const { isLoading2, data: categories } = useQuery('categories', () =>
+    const { isLoading, data: categories } = useQuery('categories', () =>
         fetch('https://backend.dokanbhai.dokanbhai.com:3002/api/add/category').then(res =>
             res.json()
         )
@@ -37,15 +41,11 @@ const AllProducts = () => {
 
 
 
-    if (loading1 || isLoading || isLoading2) {
-        return <Loading></Loading>
-    }
-
 
     // console.log(paginated_products?.products.length)
     // console.log('All')
     // console.log(allProducts.products)
-    console.log(categories)
+    // console.log(categories)
 
 
 
@@ -57,9 +57,106 @@ const AllProducts = () => {
 
     }
 
-    // if (loading1) {
-    //     return <Loading></Loading>
-    // }
+    const handleFilteredProduct = (category) => {
+
+        // dispatch(filterShop(floor))
+        // console.log(category)
+        dispatch(loadsideNavCategoryProductData(category, loading, setLoading))
+
+        // const productCategory = {
+        //     products: products,
+        //     category: category
+        // }
+
+        if (loading) {
+            return <Loading></Loading>
+        }
+
+        dispatch(loadFilteredProduct(category));
+    }
+
+    if (loading1 || isLoading) {
+        return <Loading></Loading>
+    }
+
+    let content;
+
+    if (filtered_products?.products?.length) {
+        content = <div className='all-products-container'>
+            <div className='mx-3 lg:mx-5 '>
+
+                <div className='flex justify-center'>
+                    <div className="all-products">
+                        {
+                            filtered_products?.products?.map(p => <>
+                                <Link to={`/details/${p._id}`} className="single-product" >
+                                    <div className='img-container'>
+                                        <img className='product-img' src={`https://brandatoz.com${p.image.split(",")[0]}`} alt="" />
+                                    </div>
+                                    <div className="product-details">
+                                        <p className='product-name'>{p.name}</p>
+                                        <p className='product-type'>Sit eu</p>
+                                        <h2 className='product-price'>BDT <span>{p.price}</span></h2>
+                                    </div>
+                                </Link>
+                            </>
+
+                            )
+                        }
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div className=''>
+
+
+
+                <div className=' h-[150px] mt-[10px]  pt-[20px]'>
+
+
+                    <ReactPaginate
+
+                        previousLabel={'<'}
+                        nextLabel={'>'}
+                        breakLabel={'...'}
+                        pageCount={8}
+                        onPageActive={handleClick}
+                        marginPagesDisplayed={7}
+                        pageRangeDisplayed={1}
+                        onPageChange={handleClick}
+                        forcePage={currentPage}
+                        containerClassName={'flex justify-center items-center mt-[20px]  space-x-2'}
+
+                        pageLinkClassName={'border-2 border-gray-400 px-[10px] rounded-full py-[7px]  md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+
+                        // previousClassName={' px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
+                        previousLinkClassName={'rounded-full  border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+
+
+                        // nextClassName={'h-[20px] px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
+                        nextLinkClassName={'rounded-full   border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
+                        // breakLinkClassName={'px-[20px] py-[10px] text-[#FFFFFF] transition-colors duration-150 bg-white  bg-[#333333]  focus:shadow-outline '}
+                        activeLinkClassName={' text-[#FFFFFF] transition-colors duration-150  border-none bg-blue-800 focus:shadow-outline'}
+
+
+
+                    />
+                </div>
+
+
+            </div>
+        </div>
+    }
+    else {
+        content = <p className='text-center text-xl w-full text-red-500 mt-5 min-h-screen'>No products found!</p>
+    }
+
 
 
     return (
@@ -69,10 +166,11 @@ const AllProducts = () => {
             {/* <h2 className='section-title '>All Products</h2> */}
 
             <div className='all-products-filter-mobile'>
-                <select className='p-2 rounded-lg border-[1px] border-black w-full' name="" id="">
+                <select onChange={(e) => handleFilteredProduct(e.target.value)} className='p-2 rounded-lg border-[1px] border-black w-full' name="" id="">
                     <option value="">Category</option>
+                    <option value="any">Any</option>
                     {
-                        categories.map(category => <option value="">{category}</option>)
+                        categories.map(category => <option value={category}>{category}</option>)
                     }
                 </select>
 
@@ -116,9 +214,9 @@ const AllProducts = () => {
                             <span className='font-bold text-lg'>Department</span>
 
                             <div className='mt-2 '>
-
+                                <p onClick={() => handleFilteredProduct('any')} className='font-medium text-[15px] text-black cursor-pointer'>Any</p>
                                 {
-                                    categories.map(category => <p className='font-medium text-[15px] text-black'>{category}</p>)
+                                    categories.map(category => <p onClick={() => handleFilteredProduct(category)} className='font-medium text-[15px] text-black cursor-pointer focus:text-red-500'>{category}</p>)
                                 }
 
 
@@ -214,76 +312,7 @@ const AllProducts = () => {
                     {/* <h1 className='text-2xl text-center text-red-700'>{paginated_products?.page}</h1> */}
                     {/* <h1 className='mt-[100px] text-red-700'>{number}</h1> */}
 
-                    <div className='all-products-container'>
-                        <div className='mx-3 lg:mx-5'>
-
-                            <div className='flex justify-center'>
-                                <div className="all-products">
-                                    {
-                                        paginated_products?.products?.map(p => <>
-                                            <Link to={`/details/${p._id}`} className="single-product" >
-                                                <div className='img-container'>
-                                                    <img className='product-img' src={`https://brandatoz.com${p.image.split(",")[0]}`} alt="" />
-                                                </div>
-                                                <div className="product-details">
-                                                    <p className='product-name'>{p.name}</p>
-                                                    <p className='product-type'>Sit eu</p>
-                                                    <h2 className='product-price'>BDT <span>{p.price}</span></h2>
-                                                </div>
-                                            </Link>
-                                        </>
-
-                                        )
-                                    }
-
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div className=''>
-
-
-
-                            <div className=' h-[150px] mt-[10px]  pt-[20px]'>
-
-
-                                <ReactPaginate
-
-                                    previousLabel={'<'}
-                                    nextLabel={'>'}
-                                    breakLabel={'...'}
-                                    pageCount={8}
-                                    onPageActive={handleClick}
-                                    marginPagesDisplayed={7}
-                                    pageRangeDisplayed={1}
-                                    onPageChange={handleClick}
-                                    forcePage={currentPage}
-                                    containerClassName={'flex justify-center items-center mt-[20px]  space-x-2'}
-
-                                    pageLinkClassName={'border-2 border-gray-400 px-[10px] rounded-full py-[7px]  md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
-
-                                    // previousClassName={' px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
-                                    previousLinkClassName={'rounded-full  border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
-
-
-                                    // nextClassName={'h-[20px] px-5 text-indigo-600 transition-colors duration-150 bg-white border border-r-0 border-indigo-600 rounded-l-lg focus:shadow-outline hover:bg-indigo-100'}
-                                    nextLinkClassName={'rounded-full   border-2 border-gray-400 px-[10px] py-[7px] md:px-[20px] md:rounded-full   md:py-[13px]  text-slate-700  text-[12px] md:text-2xl font-bold  transition-colors duration-150 bg-white    focus:shadow-outline '}
-                                    // breakLinkClassName={'px-[20px] py-[10px] text-[#FFFFFF] transition-colors duration-150 bg-white  bg-[#333333]  focus:shadow-outline '}
-                                    activeLinkClassName={' text-[#FFFFFF] transition-colors duration-150  border-none bg-blue-800 focus:shadow-outline'}
-
-
-
-                                />
-                            </div>
-
-
-                        </div>
-                    </div>
+                    {content}
 
                 </div>
             </div>
