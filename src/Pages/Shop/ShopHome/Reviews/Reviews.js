@@ -11,16 +11,17 @@ const Reviews = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(createShopHomePAge(id))
-       
+
 
     }, [dispatch, id])
     return (
         <div className=' bg-black h-max'>
-       <ShopHome></ShopHome>
-            <div className='mt-[50px] py-[30px]'>
-               <h1 className='text-white text-2xl font-extrabold text-center'>Comming soon!</h1>
+            <ShopHome></ShopHome>
+            <div className='flex justify-center items-center min-h-screen'>
+                <h1 className='text-white text-2xl font-extrabold text-center'>Comming soon!</h1>
             </div>
-            
+
+            <hr className='' />
         </div>
     );
 };

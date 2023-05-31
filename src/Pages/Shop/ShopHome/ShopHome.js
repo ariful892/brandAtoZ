@@ -11,7 +11,7 @@ import youtube from '../../../assets/icons/youtube-removebg-preview.png'
 import { NavLink, Outlet } from 'react-router-dom';
 import Shop from '../Shop';
 
-const ShopHome = ({id}) => {
+const ShopHome = ({ id }) => {
 
     const state = useSelector((state) => state);
     const { userInfo, loading2 } = useSelector((state) => state?.userSignin);
@@ -30,7 +30,7 @@ const ShopHome = ({id}) => {
         </div>
     }
 
-    let x=Math.floor((Math.random()*37)+7)
+    let x = Math.floor((Math.random() * 37) + 7)
 
     return (
         <div>
@@ -49,27 +49,27 @@ const ShopHome = ({id}) => {
                                     <div className=' text-[12px] w-[150px] md:w-max  md:text-xl md:font-bold'>
                                         <p className='text-white'>{s.seller.shopName}</p>
                                         <div className='flex  justify-start items-center space-x-1 md:space-x-2 '>
-                                       
-                                 
 
-                                     <span class="fa fa-star text-yellow-400"></span>
-                                        <p className='text-slate-400 font-bold '>4.9</p>
+
+
+                                            <span class="fa fa-star text-yellow-400"></span>
+                                            <p className='text-slate-400 font-bold '>4.9</p>
                                             <p className='text-slate-400 font-bold'>(116)</p>
-                                        <div className='text-white h-[20px] w-[20px] rounded-full flex justify-center items-center bg-[#40444b]'>
+                                            <div className='text-white h-[20px] w-[20px] rounded-full flex justify-center items-center bg-[#40444b]'>
                                                 <p className='text-black'>i</p>
                                             </div>
-                                        <p className='text-slate-400 font-bold '>{s?.seller?.description}</p>
+                                            <p className='text-slate-400 font-bold '>{s?.seller?.description}</p>
 
-                                       {/* <div className='flex flex-col  my-[20px]'>
+                                            {/* <div className='flex flex-col  my-[20px]'>
                                        <p className='text-white'>Shop Address: {s?.seller?.shopAddress}</p>
                                         <p className='text-white'>Seller Address: {s?.seller?.ownerAddress}</p>
                                         <p className='text-white'>Seller Email: {s?.email}</p>
                                         <p className='text-white'>Phone no: {s?.phnNo}</p>
                                        </div> */}
 
-                                        <div className='mt-[22px] flex justify-start items-center space-x-6'>
+                                            <div className='mt-[22px] flex justify-start items-center space-x-6'>
 
-                                            {/* <a href={s?.seller?.facebookLink}> <div className='h-[30px] w-[30px] rounded-full bg-blue-600 flex
+                                                {/* <a href={s?.seller?.facebookLink}> <div className='h-[30px] w-[30px] rounded-full bg-blue-600 flex
                                                  justify-center items-center'>
                                                 <FaFacebookF size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} />
 
@@ -78,11 +78,11 @@ const ShopHome = ({id}) => {
                                             <a href={s?.seller?.youtubeLink}><img className='h-[30px] w-[30px]' src={youtube} alt="" /></a> */}
 
 
-                                            {/* <RiInstagramFill size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} /> */}
-                                            {(userInfo?.name || userInfoRegister?.name) && <><button className='px-4 py-1 bg-[#DE3D3A]  font-semibold text-[16px] leading-tight rounded-lg text-white'>Reel</button> </>}
+                                                {/* <RiInstagramFill size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} /> */}
+                                                {(userInfo?.name || userInfoRegister?.name) && <><button className='px-4 py-1 bg-[#DE3D3A]  font-semibold text-[16px] leading-tight rounded-lg text-white'>Reel</button> </>}
 
 
-                                        </div>
+                                            </div>
 
                                         </div>
 
@@ -119,18 +119,18 @@ const ShopHome = ({id}) => {
                                     <RiMessengerFill style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} />
                                 </div>
                                 {/* <div className='px-[20px] py-[8px] bg-[#454545] text-white flex justify-center items-center rounded-[4px]'> */}
-                                    {/* <BsThreeDots style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} /> */}
-                                    
-                  
+                                {/* <BsThreeDots style={{ color: '#FFFFFF', fill: '#FFFFFF' }} size={20} /> */}
+
+
                                 {/* </div> */}
 
                                 <a href={s?.seller?.facebookLink}> <div className='h-[30px] w-[30px] rounded-full bg-blue-600 flex
                                                  justify-center items-center'>
-                                                <FaFacebookF size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} />
+                                    <FaFacebookF size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} />
 
-                                            </div></a>
+                                </div></a>
 
-                                            <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
+                                <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
                             </div>
 
 
@@ -143,26 +143,20 @@ const ShopHome = ({id}) => {
                                     <p className='text-slate-400 font-bold'>Brand A To Z <span className='px-[3px] text-slate-400'>{x}</span> like this</p>
                                 </div>
 
-                               
+
                             </div>
-
-                           
-
-                            
-
-
 
                         </div>
 
 
                         <div className='hidden md:flex justify-between items-center md:px-[10px]  md:mt-[15px]' >
                             <div className='flex justify-start items-center space-x-1   md:space-x-5  font-semibold'>
-                         
-                                  
-                                 <Shop></Shop>
+
+
+                                <Shop></Shop>
                                 <div className='flex justify-center items-center space-x-1'>
 
-                                   {/* <NavLink to={`/about/${id}`} className={({ isActive }) =>
+                                    {/* <NavLink to={`/about/${id}`} className={({ isActive }) =>
                             isActive ? 'border-b-2 border-red-600' : undefined
                         }>
                                   <p className='text-white'>About</p>
@@ -182,26 +176,26 @@ const ShopHome = ({id}) => {
                                     <BsThreeDots className='text-white ' size={23} />
                                 </div> */}
 
-<a href={s?.seller?.facebookLink}> <div className='h-[30px] w-[30px] rounded-full bg-blue-600 flex
+                                <a href={s?.seller?.facebookLink}> <div className='h-[30px] w-[30px] rounded-full bg-blue-600 flex
                                                  justify-center items-center'>
-                                                <FaFacebookF size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} />
+                                    <FaFacebookF size={20} style={{ color: '#FFFFFF', fill: '#FFFFFF' }} />
 
-                                            </div></a>
+                                </div></a>
 
-                                            <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
+                                <a href={s?.seller?.youtubeLink}><img className='h-[40px] w-[40px]' src={youtube} alt="" /></a>
                             </div>
                         </div>
-                        
-                       
+
+
 
                         <div className='flex justify-between items-center px-[15px] mt-[12px]  font-bold md:hidden'>
-                       <Shop></Shop>
+                            <Shop></Shop>
                             {/* <NavLink to={`/about/${id}`} className={({ isActive }) =>
                             isActive ? 'border-b-2 border-red-600' : undefined
                         }>
                                   <p className='text-white'>About</p>
                         </NavLink> */}
-                      
+
                         </div>
 
                     </>)
@@ -212,6 +206,8 @@ const ShopHome = ({id}) => {
             </div>
 
             <Outlet />
+
+
 
         </div>
     );

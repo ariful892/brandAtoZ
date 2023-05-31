@@ -116,7 +116,7 @@ const CategoryProducts = () => {
 
 
     return (
-        <div className=' search-product-container'>
+        <div className='mt-16 lg:mt-28 md:mt-24'>
             {/* <h1 className='text-red-400 text-3xl mt-[100px]'>{categoryProducts}</h1> */}
             {content}
 

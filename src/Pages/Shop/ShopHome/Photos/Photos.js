@@ -22,14 +22,15 @@ const Photos = () => {
             <div className=' bg-black h-max'>
                 <ShopHome></ShopHome>
                 <div>
-                    <div className='mt-[50px] py-[30px]'>
-                        <h1 className='text-white text-2xl font-extrabold text-center h-screen'>Comming soon!</h1>
+                    <div className='flex justify-center items-center min-h-screen'>
+                        <h1 className='text-white text-2xl font-extrabold text-center'>Comming soon!</h1>
                     </div>
 
                 </div>
 
             </div>
 
+            <hr className='' />
         </div>
 
     );

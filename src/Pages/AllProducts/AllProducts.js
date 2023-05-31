@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import loadsProductsPagination, { loadAllProductsPagination, loadFilteredProduct } from '../../redux/actionCreators/productsWithPaginationAction';
+import loadsProductsPagination, { loadAllProductsPagination, loadFilteredProduct, loadPriceFilteredProduct } from '../../redux/actionCreators/productsWithPaginationAction';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../Shared/Loading/Loading';
 import ReactPaginate from 'react-paginate';
@@ -11,6 +11,7 @@ import star from '../../assets/icons/Star.png';
 import starLight from '../../assets/icons/starlight.png';
 import './AllProducts.css'
 import loadsideNavCategoryProductData from '../../redux/actionCreators/fetchSideNavCategoryProducts';
+import { LOAD_PRICE_FILTERED_PRODUCTS } from '../../redux/actionTypes/actionTypes';
 
 const AllProducts = () => {
 
@@ -23,7 +24,7 @@ const AllProducts = () => {
     // const products = useSelector((state) => state?.sideNavCategoryProducts?.products[0]?.products)
 
     // console.log('filtered_products')
-    // console.log(filtered_products)
+    // console.log(filtered_products?.products)
 
 
     useEffect(() => {
@@ -75,6 +76,21 @@ const AllProducts = () => {
         dispatch(loadFilteredProduct(category));
     }
 
+    // const handlePriceProduct = (lowPrice, highPrice) => {
+    const handlePriceProduct = priceCategory => {
+
+        const priceRange = priceCategory.split(' ');
+
+
+        const price = {
+            lowPrice: parseInt(priceRange[0]),
+            highPrice: parseInt(priceRange[1])
+        }
+
+        console.log(price)
+        dispatch(loadPriceFilteredProduct(price))
+    }
+
     if (loading1 || isLoading) {
         return <Loading></Loading>
     }
@@ -83,7 +99,7 @@ const AllProducts = () => {
 
     if (filtered_products?.products?.length) {
         content = <div className='all-products-container'>
-            <div className='mx-3 lg:mx-5 '>
+            <div className='lg:ml-5 '>
 
                 <div className='flex justify-center'>
                     <div className="all-products">
@@ -108,17 +124,12 @@ const AllProducts = () => {
                     </div>
                 </div>
 
-
             </div>
-
 
 
             <div className=''>
 
-
-
                 <div className=' h-[150px] mt-[10px]  pt-[20px]'>
-
 
                     <ReactPaginate
 
@@ -174,13 +185,13 @@ const AllProducts = () => {
                     }
                 </select>
 
-                <select className='p-2 rounded-lg border-[1px] border-black' name="" id="">
+                <select onChange={(e) => handlePriceProduct(e.target.value)} className='p-2 rounded-lg border-[1px] border-black' name="" id="">
                     <option value="">Price</option>
-                    <option value="">500 to 1000</option>
-                    <option value="">1000 to 2000</option>
-                    <option value="">2000 to 3000</option>
+                    <option onClick={() => handlePriceProduct('500', '1000')} value="500 1000">500 to 1000</option>
+                    <option onClick={() => handlePriceProduct('1000', '2000')} value="1000 2000">1000 to 2000</option>
+                    <option onClick={() => handlePriceProduct('2000', '3000')} value="2000 3000">2000 to 3000</option>
                 </select>
-                <select className='p-2 rounded-lg border-[1px] border-black' name="" id="">
+                {/* <select className='p-2 rounded-lg border-[1px] border-black' name="" id="">
                     <option value="">Rating</option>
                     <option value="">4stars & up</option>
                     <option value="">3stars & up</option>
@@ -192,18 +203,18 @@ const AllProducts = () => {
                     <option value="">Price: Low to High</option>
                     <option value="">Price: High to Low</option>
                     <option value="">Avg. Customer Reviews</option>
-                </select>
+                </select> */}
             </div>
 
             <div>
-                <div className='category-large'>
+                {/* <div className='category-large'>
                     <select className='p-2 mb-5 rounded-lg border-[1px] border-black' name="" id="">
                         <option value="">Newest Arrivals</option>
                         <option value="">Price: Low to High</option>
                         <option value="">Price: High to Low</option>
                         <option value="">Avg. Customer Reviews</option>
                     </select>
-                </div>
+                </div> */}
                 <div className='flex'>
 
                     <div className='all-products-filter'>
@@ -228,18 +239,18 @@ const AllProducts = () => {
 
                             <span className='font-bold text-lg'>Price</span>
 
-                            <div className='mt-2'>
+                            <div className='mt-2 cursor-pointer'>
 
                                 <p className='font-medium text-[15px]'>Price</p>
-                                <p className='font-medium text-[15px]'>500 to 1000</p>
-                                <p className='font-medium text-[15px]'>1000 to 2000</p>
-                                <p className='font-medium text-[15px]'>2000 to 3000</p>
+                                <p onClick={() => handlePriceProduct('500 1000')} className='font-medium text-[15px]'>500 to 1000</p>
+                                <p onClick={() => handlePriceProduct('1000 2000')} className='font-medium text-[15px]'>1000 to 2000</p>
+                                <p onClick={() => handlePriceProduct('2000 3000')} className='font-medium text-[15px]'>2000 to 3000</p>
 
                             </div>
 
                         </div>
 
-                        <div className="">
+                        {/* <div className="">
 
                             <span className='font-bold text-lg'>Avg. Customer Review</span>
 
@@ -306,7 +317,7 @@ const AllProducts = () => {
                                 </div>
                             </div>
 
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* <h1 className='text-2xl text-center text-red-700'>{paginated_products?.page}</h1> */}

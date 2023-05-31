@@ -53,6 +53,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4px;
+    background-color: white;
     /* column-gap: 4px; */
     /* justify-content: center; */
     margin-bottom: 40px;

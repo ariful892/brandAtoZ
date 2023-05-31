@@ -1,4 +1,4 @@
-import { LOAD_FILTERED_PRODUCTS, PRODUCTS_PAGINATION, PRODUCTS_PAGINATION_REQUEST, PRODUCTS_PAGINATION_SUCCESS } from "../actionTypes/actionTypes"
+import { LOAD_FILTERED_PRODUCTS, LOAD_PRICE_FILTERED_PRODUCTS, PRODUCTS_PAGINATION, PRODUCTS_PAGINATION_REQUEST, PRODUCTS_PAGINATION_SUCCESS } from "../actionTypes/actionTypes"
 
 
 
@@ -28,8 +28,7 @@ const pagitedProducts = (state = initialState, actions) => {
         }
 
         case LOAD_FILTERED_PRODUCTS: {
-            console.log(actions.payload)
-            console.log(state.paginated_products)
+
             if (actions.payload === 'any') {
                 return {
                     ...state,
@@ -38,6 +37,17 @@ const pagitedProducts = (state = initialState, actions) => {
                 }
             }
 
+            return {
+                ...state,
+                loading1: false,
+                filtered_products: actions.payload
+            }
+
+        }
+
+        case LOAD_PRICE_FILTERED_PRODUCTS: {
+            // console.log('actions')
+            // console.log(actions.payload)
             return {
                 ...state,
                 loading1: false,

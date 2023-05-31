@@ -66,14 +66,15 @@
     width: 387px;
     font-weight: 400;
     font-size: 31px;
-    line-height: 48px;
+    line-height: 40px;
+    font-weight: bold;
 }
 
 .product-type-name {
     font-weight: 400;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 36px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 8px;
 }
 
@@ -83,9 +84,9 @@
 }
 
 .product-rating img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
+    width: 19px;
+    height: 19px;
+    margin-right: 10px;
 }
 
 .price-btn-container {
@@ -104,9 +105,9 @@
 
 .price {
     font-weight: 600;
-    font-size: 36px;
-    line-height: 52px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 28px;
     /* margin-top: 170px; */
 }
 
@@ -214,13 +215,20 @@
     }
 
     .products-title {
-        font-size: 30px;
+        font-size: 25px;
         width: auto;
+        font-weight: 700;
     }
 
     .product-type-name {
-        font-size: 25px;
-        margin-top: 10px;
+        font-size: 22px;
+        margin-top: 4px;
+    }
+
+    .product-rating img {
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
     }
 
     .price-btn-container {

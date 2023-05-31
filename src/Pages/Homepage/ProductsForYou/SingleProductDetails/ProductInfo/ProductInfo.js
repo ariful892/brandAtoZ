@@ -86,7 +86,7 @@ const ProductInfo = () => {
 
     let productImagesList, productImages;
     if (product) {
-        productImagesList = product.image.split(',');
+        productImagesList = product?.image.split(',');
     }
 
 
@@ -215,19 +215,19 @@ const ProductInfo = () => {
             mainPrice = product.discounted_price;
         }
         else {
-            mainPrice = product.price;
+            mainPrice = product?.price;
         }
         // console.log(mainPrice)
 
         const cart = {
             product: id,
-            name: product.name,
+            name: product?.name,
             image: img,
-            countInStock: product.countInStock,
-            seller: product.seller,
+            countInStock: product?.countInStock,
+            seller: product?.seller,
             clr: data.color,
             sz: data.size,
-            qty: parseInt(data.quantity),
+            qty: parseInt(data?.quantity),
             // material: product?.material,
             price: mainPrice,
             tenPercentage: false,
@@ -266,11 +266,13 @@ const ProductInfo = () => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.insertedId) {
+                            console.log('success')
                             // toast.success('Product is added');
                             // reset();
                         }
                         else (
-                            toast.error('Failed to add')
+                            console.log('failed')
+                            // toast.error('Failed to add')
                         )
                     })
 
@@ -399,10 +401,10 @@ const ProductInfo = () => {
                     </div>
                     <div className='product-info'>
 
-                        <h2 className="products-title">{product.name}</h2>
+                        <h2 className="products-title">{product?.name}</h2>
 
                         <div className='flex justify-between items-center'>
-                            <p className="product-type-name">{product.category}</p>
+                            <p className="product-type-name">{product?.category}</p>
 
                             <div className='heart-icon-container'>
                                 <img className='heart-icon' src={heart} alt="" />
@@ -417,7 +419,7 @@ const ProductInfo = () => {
                             <img src={starlight} alt="" />
                         </div>
 
-                        <div className='mt-10'>
+                        <div className='mt-8'>
 
                             <form onSubmit={handleSubmit(onSubmit)} >
 
@@ -522,7 +524,7 @@ const ProductInfo = () => {
                                 </div>
 
                                 <div className='w-60 mx-auto mt-8'>
-                                    <label htmlFor="my-modal-3" className='px-3 py-2 border-4 border-black-600 bg-white hover:bg-gray-100 rounded-md '>Quick Look</label>
+                                    <label htmlFor="my-modal-3" className='px-3 py-2 hover:border-[1px] hover:border-black  btn-warning  rounded-md font-semibold text-md'>Quick Look</label>
                                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
 
                                     <QuickLookModal
@@ -533,8 +535,8 @@ const ProductInfo = () => {
                                 </div>
 
                                 <div className="price-btn-container">
-                                    <p className="quantity ">Available Quantity: <span>{product.countInStock}</span></p>
-                                    <h2 className="price">BDT <span>{product.price}</span></h2>
+                                    <p className="quantity ">Available Quantity: <span>{product?.countInStock}</span></p>
+                                    <h2 className="price">BDT <span>{product?.price}</span></h2>
 
                                     <div className='button-container'>
                                         <button onClick={handleBuyNow} className='btn-red'>Buy Now</button>

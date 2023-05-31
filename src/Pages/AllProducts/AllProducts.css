@@ -91,8 +91,35 @@
 
 /* Tablet devices */
 @media only screen and (min-width:693px) and (max-width:1192px) {
+    .all-products-filter-container {
+        margin-top: 70px;
+        margin-left: 0px;
+    }
 
+    .all-products-filter-mobile {
+        width: 100%;
+        display: block;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 24px;
+        margin-top: 24px;
+        gap: 12px;
+        padding: 8px;
+        font-size: 14px;
+    }
 
+    .category-large {
+        display: none;
+    }
+
+    .all-products-filter {
+        display: none;
+    }
+
+    .all-products-container {
+        width: 100%;
+        min-height: 400px;
+    }
 
     .all-products {
         /* width: fit-content; */

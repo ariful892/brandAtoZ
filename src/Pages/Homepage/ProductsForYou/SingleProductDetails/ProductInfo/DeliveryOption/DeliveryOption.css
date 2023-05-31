@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px 16px 120px;
+    padding: 12px 12px 120px;
     gap: 40px;
     background: #FFFFFF;
     border-radius: 16px;
@@ -13,9 +13,10 @@
 
 .delivery-option-title {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
     letter-spacing: 0.02em;
+    font-weight: 600;
 }
 
 .delivery-option-value {
@@ -32,7 +33,7 @@
 /* Mobile device */
 @media screen and (max-width:692px) {
     .delivery-option-container {
-        width: 50%;
+        width: 60%;
         margin: auto;
         margin-top: 60px;
         /* padding: 0px; */

@@ -16,7 +16,7 @@ const Carts = () => {
     const loading = useSelector((state) => state.forYouProducts.loading);
 
     // console.log('carts');
-    console.log(carts);
+    // console.log(carts);
 
     const cartProduct = getStoredCart();
     // console.log(cartProduct)
@@ -59,9 +59,9 @@ const Carts = () => {
     return (
         <div className='carts-container min-h-screen '>
 
-        {cartContent}
+            {cartContent}
 
-        {/* <div>
+            {/* <div>
         <h2 className='text-2xl text-center mb-5'>Products that you chose to purchase </h2>
         <div className='flex justify-center'>
             <div className="s-products">
@@ -75,7 +75,7 @@ const Carts = () => {
             </div>
         </div>
     </div> */}
-    </div>
+        </div>
     );
 };
 

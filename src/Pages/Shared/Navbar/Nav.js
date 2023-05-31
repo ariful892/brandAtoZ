@@ -339,7 +339,8 @@ const Nav = ({ nav, setNav, modalOpen, setModalOpen }) => {
                     <DocumentTextIcon className="h-6 w-full border-b-2 border-zinc-300 my-[8px] " />
                     <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-full border-b-2 border-zinc-300 my-[8px]   " />
                     <BellIcon className="h-6 w-full  border-b-2 border-zinc-300  my-[8px]" />
-                    <ShoppingCartIcon className="h-6 w-full border-b-2 border-zinc-300 my-[8px] " />
+                    <Link to={'/cart'} className="border-b-2 border-zinc-300 my-[8px] ">  <ShoppingCartIcon className='h-6 w-full ' /></Link>
+                    {/* <ShoppingCartIcon to={'/cart'} className="h-6 w-full border-b-2 border-zinc-300 my-[8px] " /> */}
                     {(userInfo || userInfoRegister) ? <a onClick={signOutHandler} className=" " href="#"> <button className=' w-full px-6 py-2.5
             bg-[#D1DEEB]
             font-semibold
