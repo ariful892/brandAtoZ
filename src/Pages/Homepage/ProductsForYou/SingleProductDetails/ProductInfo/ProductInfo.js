@@ -241,7 +241,7 @@ const ProductInfo = () => {
 
 
         if (cartProduct.length) {
-            const addedCart = cartProduct.filter(c => c.productID === id);
+            const addedCart = cartProduct.filter(c => c.product === id);
             // console.log(addedCart);
             if (addedCart.length) {
                 toast.error('Already added')

@@ -29,7 +29,7 @@ const SingleCart = (cart) => {
     // console.log(cartProduct);
 
     const removeProduct = () => {
-        const newCart = carts.filter(c => c.productID !== cart.cart.productID);
+        const newCart = carts.filter(c => c.product !== cart.cart.product);
         // console.log(newCart)
         dispatch(loadCartProducts(newCart))
         removeFromDb(newCart)
